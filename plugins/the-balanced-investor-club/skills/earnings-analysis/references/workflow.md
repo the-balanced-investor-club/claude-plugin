@@ -154,8 +154,7 @@ After SEARCHING FOR and confirming the latest quarter, collect the following:
   - **Search for**: "[Company] latest earnings call transcript" or "[Company] Q[X] [Year] earnings call transcript"
   - **Sources**:
     - Company IR site (some post transcripts directly)
-    - Seeking Alpha: Search "[Company] [latest quarter] earnings call transcript"
-    - AlphaStreet, Motley Fool (alternative sources)
+    - Web search: "[Company] [latest quarter] earnings call transcript"
   - **CRITICAL DATE CHECK**:
     - ✅ **Before using ANY transcript, verify the date on the transcript itself**
     - ✅ **The transcript date MUST match the earnings release date from Step 1**
@@ -182,7 +181,7 @@ After SEARCHING FOR and confirming the latest quarter, collect the following:
   - From last earnings update or initiation report
   - Check what was estimated for this quarter's metrics
 
-- **Consensus estimates** - From Bloomberg, FactSet, Refinitiv, or Yahoo Finance
+- **Consensus estimates** - From The Balanced Investor Club connector (get_earnings_estimates)
   - CRITICAL: Use estimates from BEFORE earnings release
   - Look for "as of [date before earnings]" to ensure pre-announcement consensus
   - Needed for beat/miss analysis

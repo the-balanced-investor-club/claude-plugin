@@ -373,7 +373,7 @@ Required from model:
   - Comparable companies data (Task 3 tab in same Excel file)
   - Valuation ranges (Task 3 tab in same Excel file)
 - **Required**: External market data
-  - Historical stock price data (Yahoo Finance, Bloomberg, etc.)
+  - Historical stock price data (The Balanced Investor Club connector: get_close_history)
   - Historical valuation multiples (for historical trend charts)
 
 **⚠️ CRITICAL: DO NOT START THIS TASK UNLESS TASKS 1, 2, AND 3 ARE COMPLETE**

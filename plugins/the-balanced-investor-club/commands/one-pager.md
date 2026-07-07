@@ -96,7 +96,7 @@ Provide:
 │ │ EV/EBITDA │ XXx │ XXx │   │ • State Street: X.X%              │
 │ └──────────────────────┘   │                                    │
 └────────────────────────────┴────────────────────────────────────┘
-Source: Company filings, FactSet
+Source: Company filings, The Balanced Investor Club connector
 ```
 
 ## Quality Checklist

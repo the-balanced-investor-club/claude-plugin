@@ -18,7 +18,7 @@ Given a single break row (key, GL values, subledger values, bucket, likely cause
 Write the root cause as a single sentence in the form **"⟨side⟩ ⟨did what⟩ because ⟨reason⟩"**, e.g.:
 
 - "GL posted on settle date (T+2) while subledger posted on trade date — timing break, will clear on 2026-05-07."
-- "Subledger used WM/R 4pm rate; GL used Bloomberg close — FX break of 12 bps on the base amount."
+- "Subledger used WM/R 4pm rate; GL used the custodian's close rate — FX break of 12 bps on the base amount."
 - "Security ABC123 maps to GL account 11420 in the mapping table but the subledger fed 11410 — mapping break, raise to reference-data."
 - "Subledger posted the trade twice (trade ids 88412 and 88419 are duplicates) — duplicate post, suppress 88419."
 

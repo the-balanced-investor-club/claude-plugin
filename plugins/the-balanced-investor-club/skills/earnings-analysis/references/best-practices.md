@@ -125,7 +125,7 @@ Before delivering earnings update, verify all items below:
 - [ ] Source citations include page numbers or slide numbers where applicable
 
 **Beat/Miss Citations:**
-- [ ] Beat/miss analysis cites consensus source (Bloomberg, FactSet, etc.)
+- [ ] Beat/miss analysis cites consensus source (The Balanced Investor Club connector: get_earnings_estimates, with access date)
 - [ ] Consensus source includes "as of" date (pre-earnings close)
 - [ ] Company reported results cited to earnings release or 10-Q
 

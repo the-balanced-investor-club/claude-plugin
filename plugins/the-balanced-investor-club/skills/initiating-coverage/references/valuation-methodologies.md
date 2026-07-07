@@ -291,7 +291,7 @@ Precedent transactions values a company based on prices paid for similar compani
 **Sources:**
 - SEC filings (S-4, 8-K, proxy statements)
 - Press releases and investor presentations
-- M&A databases (CapIQ, FactSet, Bloomberg)
+- The Balanced Investor Club connector (get_news) for deal coverage
 
 #### 3. Calculate Transaction Multiples
 

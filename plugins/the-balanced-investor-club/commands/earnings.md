@@ -37,7 +37,7 @@ Use `skill: "earnings-analysis"` to create the report:
    - 10-Q filing from SEC EDGAR
    - Earnings call transcript
    - Investor presentation/supplemental materials
-   - Consensus estimates (Bloomberg/FactSet)
+   - Consensus estimates (The Balanced Investor Club connector: get_earnings_estimates)
 
 2. **Beat/Miss Analysis**:
    - Revenue vs consensus: Beat/Miss by $X or X%
@@ -124,7 +124,7 @@ SOURCES SECTION (with clickable hyperlinks):
 - Earnings Release: [hyperlink]
 - Form 10-Q: [EDGAR hyperlink]
 - Earnings Call Transcript: [hyperlink]
-- Consensus estimates: Bloomberg as of [date]
+- Consensus estimates: The Balanced Investor Club connector (get_earnings_estimates) as of [date]
 ```
 
 ## Quality Checklist

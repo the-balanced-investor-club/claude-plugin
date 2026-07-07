@@ -95,7 +95,7 @@ This applies to every merged section header in the DCF (market data, scenario bl
 Fetch data from MCP servers, user provided data, and the web.
 
 **Data Sources Priority:**
-1. **MCP Servers** (if configured) - Structured financial data from providers like Daloopa
+1. **The Balanced Investor Club connector** - Structured financials (get_fundamentals, get_income_statement, get_balance_sheet, get_cash_flow)
 2. **User-Provided Data** - Historical financials from their research
 3. **Web Search/Fetch** - Current prices, beta, debt and cash when needed
 
@@ -1200,7 +1200,7 @@ This approach centralizes scenario logic, making the model easier to audit and m
    - Request from user if specific data is needed
 
 2. **Gather historical financials**:
-   - Check for available MCP servers (Daloopa, etc.)
+   - Pull from The Balanced Investor Club connector (get_income_statement, get_balance_sheet, get_cash_flow)
    - Request from user if not available via MCP
    - Manual extraction from 10-Ks if necessary
 
@@ -1239,7 +1239,7 @@ This approach centralizes scenario logic, making the model easier to audit and m
 
 ### Available Data Sources
 
-- **MCP servers**: If configured (Daloopa for historical financials)
+- **The Balanced Investor Club connector**: historical financials (get_income_statement, get_balance_sheet, get_cash_flow), fundamentals and beta (get_fundamentals)
 - **Web search/fetch**: For current stock prices, beta, and market data
 - **User-provided data**: Historical financials, consensus estimates
 - **Manual extraction**: SEC EDGAR filings as fallback
