@@ -362,9 +362,9 @@ If you have more than 15 metrics, you're probably including noise. Edit ruthless
 2. **Add cell comments to ALL hard-coded inputs** - Right-click cell → Insert Comment → Document source OR assumption
 
    **For sourced data, cite exactly where it came from:**
-   - Example: "Bloomberg Terminal - MSFT Equity DES, accessed 2024-10-02"
+   - Example: "The Balanced Investor Club connector - get_fundamentals MSFT, accessed 2024-10-02"
    - Example: "Q4 2024 10-K filing, page 42, line item 'Total Revenue'"
-   - Example: "FactSet consensus estimate as of 2024-10-02"
+   - Example: "The Balanced Investor Club connector - get_earnings_estimates MSFT, consensus EPS as of 2024-10-02"
    - **Include hyperlinks when possible**: Right-click cell → Link → paste URL to SEC filing, data source, or report
 
    **For assumptions, explain the reasoning:**
@@ -474,7 +474,7 @@ This helps answer: "Is our target company trading rich or cheap vs. peers?"
 ### Pro Tips
 - **Save templates**: Build once, reuse forever
 - **Color-code outliers**: Conditional formatting for values >2 standard deviations
-- **Link to source files**: Hyperlink to Bloomberg screenshots or SEC filings
+- **Link to source files**: Hyperlink to SEC filings; for connector data, cite the tool name and access date (e.g., "get_fundamentals, 2024-10-02")
 - **Version control**: Save as "Comps_v1_2024-12-15" with clear dating
 - **Collaborative reviews**: Have someone else check your formulas
 
@@ -644,7 +644,7 @@ Before delivering a comp analysis, verify:
 - [ ] Units are clearly labeled (millions/billions)
 - [ ] Formulas reference cells, not hardcoded values
 - [ ] **All hard-coded input cells have comments with either: (1) exact data source with citation, OR (2) clear assumption with explanation**
-- [ ] **Hyperlinks added where relevant** (SEC EDGAR filings, Bloomberg pages, research reports)
+- [ ] **Hyperlinks added where relevant** (SEC EDGAR filings, company IR pages); connector data cited by tool name and access date
 - [ ] Statistics include at least 5 metrics (Max, 75th, Med, 25th, Min)
 - [ ] Notes section documents sources and methodology
 - [ ] Visual formatting follows conventions (blue = input, black = formula)
