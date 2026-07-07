@@ -25,12 +25,17 @@ description: |
 
 **ALWAYS follow this data source hierarchy:**
 
-1. **FIRST: Check for MCP data sources** - If S&P Kensho MCP, FactSet MCP, or Daloopa MCP are available, use them exclusively for financial and trading information
-2. **DO NOT use web search** if the above MCP data sources are available
-3. **ONLY if MCPs are unavailable:** Then use Bloomberg Terminal, SEC EDGAR filings, or other institutional sources
-4. **NEVER use web search as a primary data source** - it lacks the accuracy, audit trails, and reliability required for institutional-grade analysis
+1. **FIRST: The Balanced Investor Club connector** - Use its tools exclusively for financial and trading information. The mapping for this skill:
+   - Peer discovery: `list_securities_by` (same sector or industry), `search_instruments`
+   - Multiples and per-share data: `get_fundamentals` (market cap, P/E, forward P/E, EPS, beta, shares outstanding)
+   - Financial statements: `get_income_statement`, `get_balance_sheet`, `get_cash_flow` (annual and quarterly, for revenue, EBITDA inputs, net debt derivation)
+   - Prices: `get_close_history`; side-by-side check: `compare_tickers`
+   - Net debt is derived from the balance sheet (total debt minus cash and equivalents); it is not pre-computed. Document the derivation in the notes section.
+2. **DO NOT use web search** if the connector is available
+3. **ONLY if the connector is unavailable:** Then use SEC EDGAR filings or other primary sources
+4. **NEVER use web search as a primary data source** - it lacks the accuracy, audit trails, and reliability required for rigorous analysis
 
-**Why this matters:** MCP sources provide verified, institutional-grade data with proper citations. Web search results can be outdated, inaccurate, or unreliable for financial analysis.
+**Why this matters:** Connector data comes with consistent definitions and traceable fetch dates. Cite the tool name and fetch date in every hardcoded input cell comment. Web search results can be outdated, inaccurate, or unreliable for financial analysis.
 
 ---
 
@@ -269,10 +274,10 @@ Same structure as operating section: Max, 75th, Median, 25th, Min for every metr
 ### Required Components
 
 **Data Sources & Quality:**
-- Where did the data come from? (S&P Kensho MCP, FactSet MCP, Daloopa MCP, Bloomberg, SEC filings)
+- Where did the data come from? (The Balanced Investor Club connector: name the tool, e.g. `get_income_statement`; or SEC filings)
 - What period does it cover? (Q4 2024, audited figures)
 - How was it verified? (Cross-checked against 10-K/10-Q)
-- Note: Prioritize MCP data sources (S&P Kensho, FactSet, Daloopa) if available for better accuracy and traceability
+- Note: Prioritize the connector for accuracy and traceability; record the fetch date next to each source
 
 **Key Definitions:**
 - EBITDA calculation method (Gross Profit + D&A, or Operating Income + D&A)
@@ -440,7 +445,7 @@ This helps answer: "Is our target company trading rich or cheap vs. peers?"
    - Lock in units and date references
 
 2. **Gather data** (60-90 minutes)
-   - Pull from primary sources (S&P Kensho MCP, FactSet MCP, Daloopa MCP if available; otherwise Bloomberg, SEC)
+   - Pull from The Balanced Investor Club connector (statements, fundamentals, prices); fall back to SEC filings only if the connector is unavailable
    - Input all raw numbers in blue
    - Document sources in notes section
 
