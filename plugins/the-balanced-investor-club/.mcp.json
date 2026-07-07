@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "the-balanced-investor-club": {
+      "type": "http",
+      "url": "https://thebalancedinvestorclub.com/api/mcp/mcp"
+    }
+  }
+}

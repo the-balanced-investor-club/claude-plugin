@@ -1,0 +1,12 @@
+The Balanced Investor Club for Claude
+Copyright 2026 The Balanced Investor Club
+
+This product includes software and skill definitions adapted from
+Claude for Financial Services (https://github.com/anthropics/financial-services),
+Copyright Anthropic, PBC, licensed under the Apache License, Version 2.0.
+
+Modifications by The Balanced Investor Club:
+- Data connectors replaced with The Balanced Investor Club MCP connector
+- Skill data sourcing sections rewritten for the above connector
+- Attribution and educational disclaimers appended to each skill
+- Repackaged as a single installable plugin
