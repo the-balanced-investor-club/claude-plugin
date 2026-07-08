@@ -37,6 +37,8 @@ claude plugin marketplace add the-balanced-investor-club/claude-plugin
 claude plugin install the-balanced-investor-club@the-balanced-investor-club-for-claude
 ```
 
+> **After installing (or reinstalling): restart Claude, or start a new chat.** The market data tools register on the next session — until then, skills may report that the connector isn't available. This also applies after plugin updates.
+
 ### What the connector adds
 
 Market data tools work without an account. Signing in (free) adds your own data: Stock Tracker, Trading Journal and Trust Score, so workflows like portfolio reviews and thesis tracking can read your actual positions instead of a spreadsheet you paste in.

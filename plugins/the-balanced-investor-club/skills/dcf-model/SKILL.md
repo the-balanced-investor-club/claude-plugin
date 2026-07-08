@@ -1,6 +1,6 @@
 ---
 name: dcf-model
-description: Real DCF (Discounted Cash Flow) model creation for equity valuation. Retrieves financial data from SEC filings and analyst reports, builds comprehensive cash flow projections with proper WACC calculations, performs sensitivity analysis, and outputs professional Excel models with executive summaries. Use when users need to value a company using DCF methodology, request intrinsic value analysis, or ask for detailed financial modeling with growth projections and terminal value calculations.
+description: Real DCF (Discounted Cash Flow) model creation for equity valuation. Retrieves financial data from The Balanced Investor Club connector, builds comprehensive cash flow projections with proper WACC calculations, performs sensitivity analysis, and outputs professional Excel models with executive summaries. Use when users need to value a company using DCF methodology, request intrinsic value analysis, or ask for detailed financial modeling with growth projections and terminal value calculations.
 ---
 
 # DCF Model Builder
@@ -1242,7 +1242,7 @@ This approach centralizes scenario logic, making the model easier to audit and m
 - **The Balanced Investor Club connector**: historical financials (get_income_statement, get_balance_sheet, get_cash_flow), fundamentals and beta (get_fundamentals)
 - **Web search/fetch**: For current stock prices, beta, and market data
 - **User-provided data**: Historical financials, consensus estimates
-- **Manual extraction**: SEC EDGAR filings as fallback
+- **Manual extraction**: the company's official filings (investor relations site) as fallback
 
 ## Final Output Checklist
 

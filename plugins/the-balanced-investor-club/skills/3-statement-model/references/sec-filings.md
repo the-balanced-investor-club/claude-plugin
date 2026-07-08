@@ -1,17 +1,17 @@
-# SEC Filings Data Extraction Reference
+# Public Company Data Extraction Reference
 
-**When to Use:** Only reference this file when a model template specifically requires pulling data from SEC filings (10-K, 10-Q). For templates that provide data directly or use other data sources, this reference is not needed.
+**When to Use:** Only reference this file when a model template requires public company financials. **Primary source: The Balanced Investor Club connector** — `get_income_statement`, `get_balance_sheet`, `get_cash_flow` (annual and quarterly). Use the company's official annual/quarterly report (10-K / 10-Q) from its investor relations site only for note-level detail the connector doesn't carry (debt schedules, lease obligations, segment notes).
 
 ---
 
-## Extracting Data from SEC Filings (10-K / 10-Q)
+## Extracting Data (connector first, filings for notes)
 
-When populating a model template with public company data, extract financials directly from SEC filings.
+When populating a model template with public company data, pull the statements from the connector. The line-item mappings below apply to both connector output and filing documents.
 
-### Step 1: Locate the Filing
+### Step 1: Locate the Source
 
-1. Use SEC EDGAR: `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=[TICKER]&type=10-K`
-2. For quarterly data, use `type=10-Q`
+1. Connector: `get_income_statement`, `get_balance_sheet`, `get_cash_flow` with `frequency: "annual"` or `"quarterly"`
+2. For note-level detail: the latest 10-K / 10-Q on the company's investor relations site
 
 ### Step 2: Identify Filing Currency
 

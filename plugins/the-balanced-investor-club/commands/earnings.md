@@ -34,7 +34,7 @@ Use `skill: "earnings-analysis"` to create the report:
 
 1. **Data Collection** (search for latest):
    - Earnings release (press release)
-   - 10-Q filing from SEC EDGAR
+   - 10-Q filing from the company's investor relations site
    - Earnings call transcript
    - Investor presentation/supplemental materials
    - Consensus estimates (The Balanced Investor Club connector: get_earnings_estimates)
@@ -122,7 +122,7 @@ PAGES 8-10: VALUATION
 
 SOURCES SECTION (with clickable hyperlinks):
 - Earnings Release: [hyperlink]
-- Form 10-Q: [EDGAR hyperlink]
+- Form 10-Q: [company IR hyperlink]
 - Earnings Call Transcript: [hyperlink]
 - Consensus estimates: The Balanced Investor Club connector (get_earnings_estimates) as of [date]
 ```

@@ -8,7 +8,7 @@ This document provides step-by-step instructions for executing Task 2 (Financial
 
 **Prerequisites**: ⚠️ Verify before starting
 - **Required**: Access to company financial data
-  - For public companies: Latest 10-K and recent 10-Qs from SEC EDGAR
+  - For public companies: The Balanced Investor Club connector (get_income_statement, get_balance_sheet, get_cash_flow); 10-K/10-Qs from the company's investor relations site for footnote detail
   - For private companies: Financial statements or estimates from available sources
   - OR: Pre-extracted historical financials provided by user
 - **Optional**: Company research (Task 1) for business context
@@ -79,7 +79,7 @@ This document provides step-by-step instructions for executing Task 2 (Financial
 **For Public Companies:**
 
 1. **Download 10-K Filing**
-   - Go to SEC EDGAR (https://www.sec.gov/edgar/searchedgar/companysearch.html)
+   - Go to the company's investor relations site (Filings section)
    - Search for company name or ticker
    - Download latest 10-K (annual report)
    - Navigate to Item 8: Financial Statements and Supplementary Data

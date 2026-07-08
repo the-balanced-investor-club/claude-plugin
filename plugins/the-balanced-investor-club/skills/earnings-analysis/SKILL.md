@@ -55,7 +55,7 @@ Use when the user requests:
 
 ```
 Source: Q3 2024 10-Q filed November 8, 2024; Company earnings release
-        [Hyperlink "10-Q" to: https://www.sec.gov/cgi-bin/viewer?accession=...]
+        [Hyperlink "10-Q" to the filing on the company's investor relations site]
         [Hyperlink "earnings release" to: https://investor.company.com/news/q3-2024]
 ```
 
@@ -68,7 +68,7 @@ Source: Q3 2024 10-Q filed November 8, 2024; Company earnings release
 
 Cite in every earnings update:
 - ✅ Earnings release (with date and URL)
-- ✅ 10-Q filing (with filing date and EDGAR link)
+- ✅ 10-Q filing (with filing date and a link to the company's investor relations site)
 - ✅ Earnings call transcript (with date)
 - ✅ Investor presentation/supplemental materials (if available)
 - ✅ Consensus estimates source (The Balanced Investor Club connector: get_earnings_estimates, with date)
@@ -86,7 +86,7 @@ Earnings Materials (Q3 2024):
   [Hyperlink entire line to: https://investor.company.com/news/q3-2024-earnings]
 
 • Form 10-Q (Filed November 8, 2024)
-  [Hyperlink to: https://www.sec.gov/cgi-bin/viewer?accession=...]
+  [Hyperlink to the filing on the company's investor relations site]
 
 • Earnings Call Transcript (November 7, 2024)
   [Hyperlink to: https://seekingalpha.com/article/...]
@@ -103,7 +103,7 @@ Earnings Materials (Q3 2024):
 - [ ] Key statistics have footnotes
 - [ ] Sources section lists all materials with URLs
 - [ ] ALL URLs are CLICKABLE HYPERLINKS (not plain text)
-- [ ] All SEC filings hyperlinked to EDGAR viewer
+- [ ] All filings hyperlinked (company investor relations site)
 
 ### 5. Updated Estimates
 - Update forward estimates based on results

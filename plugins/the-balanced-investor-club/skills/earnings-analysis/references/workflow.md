@@ -70,7 +70,7 @@ Training data is OUTDATED. Actively search for and retrieve the MOST RECENT earn
    - Web search: `[Company name] latest earnings results`
    - Web search: `[Company name] most recent quarterly earnings`
    - Web search: `[Ticker symbol] earnings latest quarter`
-   - SEC EDGAR: Search for company and look at most recent 10-Q or 10-K filing date
+   - The Balanced Investor Club connector: get_market_calendar for the reporting date; the company's investor relations site for the filing itself
 
 **Example searches that find latest data:**
 - "Nike latest earnings results" → Returns most recent quarter reported
@@ -124,7 +124,7 @@ Companies use different terminology - recognize these patterns:
 - "[Company] Announces Third Quarter Fiscal 2024 Financial Results"
 - "[Company] Q3 Revenue Grew 15% Year-over-Year"
 
-**SEC filing searches:**
+**Filing searches (company investor relations site):**
 - Company name may differ from common name (e.g., "Meta Platforms, Inc." vs "Facebook")
 - Search by ticker symbol to find filings reliably
 - Look for most recent 10-Q (quarterly) or 10-K (annual if Q4)
@@ -143,12 +143,12 @@ After SEARCHING FOR and confirming the latest quarter, collect the following:
   - **Verify the date matches what was found in Step 1** (should be within last 1-3 months)
   - **Read the actual document** to confirm the quarter and get reported numbers
 
-- **10-Q or 10-K filing** - On SEC EDGAR (sec.gov/edgar/searchedgar/companysearch.html)
+- **10-Q or 10-K filing** - On the company's investor relations site (usually under "Financials" or "Filings")
   - Search by ticker symbol
   - For quarters 1-3: Look for most recent 10-Q
   - For Q4: Look for 10-K (annual report)
   - Note: May be filed 1-5 days after earnings release
-  - Direct link format: `https://www.sec.gov/cgi-bin/viewer?accession=[accession-number]`
+  - Link to the filing page on the company's investor relations site
 
 - **Earnings call transcript** - 🚨 **VERIFY THE DATE ON THE TRANSCRIPT** 🚨
   - **Search for**: "[Company] latest earnings call transcript" or "[Company] Q[X] [Year] earnings call transcript"
@@ -482,7 +482,7 @@ Before publishing, verify:
 - [ ] Sources section lists all materials with URLs
 - [ ] ALL URLs are CLICKABLE HYPERLINKS (not plain text)
 - [ ] Hyperlinks tested and working (Ctrl+Click opens correct page)
-- [ ] All SEC filings hyperlinked to EDGAR viewer
+- [ ] All filings hyperlinked (company investor relations site)
 - [ ] All earnings materials hyperlinked (release, transcript, presentation)
 - [ ] Prior guidance hyperlinked to prior quarter's materials
 - [ ] No raw URLs displayed - all formatted as clickable links

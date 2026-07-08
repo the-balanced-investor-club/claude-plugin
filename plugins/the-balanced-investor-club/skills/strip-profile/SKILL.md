@@ -13,7 +13,7 @@ description: |
 
 ### 2. Research & Planning
 **Data Sources:**
-- **Primary**: Company filings (SEC EDGAR - "Item 1. Business", MD&A), investor presentations, corporate website
+- **Primary**: Company filings from the investor relations site ("Item 1. Business", MD&A), investor presentations, corporate website
 - **Market data**: The Balanced Investor Club connector (get_fundamentals, get_close_history; net debt derived from get_balance_sheet)
 - **Estimates**: The Balanced Investor Club connector (get_earnings_estimates) consensus for forward revenue and EPS
 - **News**: Press releases from last 90 days, M&A activity, guidance changes

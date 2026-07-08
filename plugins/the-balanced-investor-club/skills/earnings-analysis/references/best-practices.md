@@ -144,7 +144,7 @@ Before delivering earnings update, verify all items below:
 - [ ] Hyperlinks formatted with meaningful display text
 - [ ] Blue, underlined hyperlink formatting in Word document
 - [ ] Hyperlinks tested and working (Ctrl+Click opens correct page)
-- [ ] All SEC filings hyperlinked to EDGAR viewer
+- [ ] All filings hyperlinked (company investor relations site)
 - [ ] All earnings materials hyperlinked (release, transcript, presentation)
 - [ ] Prior quarter materials hyperlinked for comparison
 - [ ] No raw URLs displayed anywhere in document

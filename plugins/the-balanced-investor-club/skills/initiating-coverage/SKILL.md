@@ -216,7 +216,7 @@ Request 5: Task 5 - Report Assembly (requires ALL previous task outputs)
 
 **Prerequisites**: ⚠️ Verify before starting
 - **Required**: Access to company financial data
-  - For public companies: Latest 10-K from SEC EDGAR
+  - For public companies: The Balanced Investor Club connector (statements tools); the latest 10-K from the company's investor relations site for detail the connector doesn't carry
   - For private companies: Financial statements or available estimates
   - OR: Pre-extracted historical financials provided by user
 - **Optional**: Company research (Task 1) for business context

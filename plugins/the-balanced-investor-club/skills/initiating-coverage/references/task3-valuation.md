@@ -311,7 +311,7 @@ Base Case: Rev CAGR = 25%, EBITDA Margin = 32% → $56
 **Data sources:**
 - The Balanced Investor Club connector (preferred): get_fundamentals, get_income_statement, get_earnings_estimates
 - Company 10-Ks/10-Qs for actuals
-- SEC filings for anything the connector does not cover
+- Company filings (investor relations site) for anything the connector does not cover
 
 #### C. Calculate Valuation Multiples
 

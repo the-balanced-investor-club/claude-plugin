@@ -104,7 +104,7 @@ Before delivering an initiation report, verify all items below are complete.
 
 **Hyperlinks:** ⭐⭐⭐ MANDATORY
 - [ ] ALL URLs are CLICKABLE HYPERLINKS (not plain text)
-- [ ] SEC filings hyperlinked to EDGAR viewer
+- [ ] Filings hyperlinked to the company's investor relations site
 - [ ] Earnings transcripts hyperlinked (company IR)
 - [ ] Press releases hyperlinked to company IR page
 - [ ] Presentations hyperlinked to PDF URLs

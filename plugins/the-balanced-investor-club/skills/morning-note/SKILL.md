@@ -17,6 +17,8 @@ Pull everything from The Balanced Investor Club connector:
 
 Cite the fetch time. Do not fill gaps from memory; if a data point is unavailable, say so.
 
+**If the connector tools are not available in this session: STOP.** Do not draft the note from web sources or memory. Tell the user: "I need The Balanced Investor Club connector for this note — it isn't connected in this session. Install the plugin (or reconnect it), start a new chat, and ask again." A restart is often required right after installing.
+
 ## Workflow
 
 ### Step 1: Overnight Developments

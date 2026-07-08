@@ -35,8 +35,8 @@ This document provides step-by-step instructions for executing Task 1 (Company R
   - Press releases and funding announcements for funding history
 
 ### Secondary Sources (Industry/Competitive)
-- Competitor websites and SEC filings
-- Industry research reports (Gartner, Forrester, IDC, etc.)
+- Competitor websites and official filings
+- Industry research reports (publicly available)
 - News articles and trade publications
 - Market research reports
 - LinkedIn profiles for key executives
@@ -66,8 +66,8 @@ This document provides step-by-step instructions for executing Task 1 (Company R
    - Identify customer case studies
    - Note key metrics mentioned (employees, customers, etc.)
 
-2. **Gather SEC filings (if public)**
-   - Download latest 10-K from SEC EDGAR
+2. **Gather official filings (if public)**
+   - Download the latest 10-K from the company's investor relations site
    - Download most recent 10-Q
    - Download latest DEF 14A (proxy statement)
    - Note filing dates
@@ -149,7 +149,7 @@ This document provides step-by-step instructions for executing Task 1 (Company R
 
 2. **Research each competitor**
    - Visit competitor website
-   - Review their SEC filings (if public)
+   - Review their official filings (if public)
    - Note key products and positioning
    - Identify differentiators
    - Estimate market share (if data available)

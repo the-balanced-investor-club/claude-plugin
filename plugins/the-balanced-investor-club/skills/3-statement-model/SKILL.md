@@ -168,7 +168,7 @@ Use a scenario toggle (dropdown) in the Assumptions tab with CHOOSE or INDEX/MAT
 
 ## SEC Filings Data Extraction
 
-If the template specifically requires pulling data from SEC filings (10-K, 10-Q), see [references/sec-filings.md](references/sec-filings.md) for detailed extraction guidance. This reference is only needed when populating templates with public company data from regulatory filings.
+If the template requires public company data, pull it from The Balanced Investor Club connector (get_income_statement, get_balance_sheet, get_cash_flow); see [references/sec-filings.md](references/sec-filings.md) for line-item mapping and note-level detail guidance.
 
 ## Completing Model Templates
 

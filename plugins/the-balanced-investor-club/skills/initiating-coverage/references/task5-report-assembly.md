@@ -434,7 +434,7 @@ Valuation Implications:
 **Data Sources & References**
 - All sources listed with dates
 - Organized by category:
-  - SEC Filings (with EDGAR links)
+  - Company Filings (with investor relations links)
   - Earnings Calls (with transcript links)
   - Company Materials
   - Industry Reports
@@ -987,10 +987,10 @@ Use Claude's DOCX skill to:
    - Add heading: 'Data Sources & References' (level 1)
    - List all sources used throughout the report
    - Organize by category:
-     - SEC Filings (10-K, 10-Q, DEF 14A, 8-K with EDGAR links)
+     - Company Filings (10-K, 10-Q, DEF 14A, 8-K with investor relations links)
      - Earnings Calls (with transcript links)
      - Company Materials (investor presentations, press releases)
-     - Industry Reports (Gartner, Forrester, etc.)
+     - Industry Reports (publicly available)
      - News Articles
    - **CRITICAL**: All URLs must be clickable hyperlinks (not plain text)
    - Include dates for all sources

@@ -289,7 +289,7 @@ Precedent transactions values a company based on prices paid for similar compani
 - Control premium paid
 
 **Sources:**
-- SEC filings (S-4, 8-K, proxy statements)
+- Deal filings (S-4, 8-K, proxy statements) from the companies' investor relations sites
 - Press releases and investor presentations
 - The Balanced Investor Club connector (get_news) for deal coverage
 
