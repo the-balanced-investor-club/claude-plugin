@@ -124,7 +124,7 @@ Industry not listed — pick the metrics investors and operators benchmark on.
 
 Size, growth, drivers, headwinds. With sources.
 
-Correct: "Embedded payments is $80-100B in 2024, growing 20-25% CAGR (McKinsey 2024)"
+Correct: "Embedded payments is $80-100B in 2024, growing 20-25% CAGR (named industry report, 2024)"
 Wrong: "The market is large and growing rapidly"
 
 ### Step 2 — Industry economics

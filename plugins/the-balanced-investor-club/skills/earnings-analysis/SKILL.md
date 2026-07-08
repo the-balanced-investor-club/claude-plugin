@@ -5,7 +5,7 @@ description: Create professional equity research earnings update reports (8-12 p
 
 # Equity Research Earnings Update
 
-Create professional **EARNINGS UPDATE REPORTS** analyzing quarterly results for companies already under coverage, following institutional standards (JPMorgan, Goldman Sachs, Morgan Stanley format).
+Create professional **EARNINGS UPDATE REPORTS** analyzing quarterly results for companies already under coverage, following institutional sell-side standards.
 
 **Key Characteristics:**
 - **Length**: 8-12 pages

@@ -50,7 +50,7 @@ After completing 4 previous tasks, this final task assembles everything into pub
 - ✅ **Write 1,500-2,000 words on Scenario Analysis** - Specific Bull/Base/Bear parameters
 - ✅ **Achieve 10,000-15,000 total words** - This is a MINIMUM, not a suggestion
 - ✅ **Produce 30-50 pages minimum** - Text-dense with charts every 200-300 words
-- ✅ **Professional institutional quality** - Indistinguishable from JPMorgan/Goldman Sachs
+- ✅ **Professional institutional quality** - Indistinguishable from top-tier institutional research
 
 **NEVER:**
 - ❌ "This section would include..." - WRITE THE ACTUAL SECTION
@@ -1315,7 +1315,7 @@ This is the culmination of all equity research work from Tasks 1-4. The output s
 - **Actionable**: Enables reader to make informed investment decision
 - **Publication-ready**: Can be delivered directly to clients
 
-**Standard**: JPMorgan, Goldman Sachs, Morgan Stanley institutional equity research.
+**Standard**: top-tier institutional equity research.
 
 **Quality bar**: Client-ready initiation report suitable for publication.
 

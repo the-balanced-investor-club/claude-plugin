@@ -9,7 +9,7 @@ Create institutional-quality equity research initiation reports through a struct
 
 ## Overview
 
-This skill produces comprehensive first-time coverage reports following institutional standards (JPMorgan, Goldman Sachs, Morgan Stanley format). Tasks are executed individually, each verifying prerequisites before proceeding.
+This skill produces comprehensive first-time coverage reports following institutional sell-side standards. Tasks are executed individually, each verifying prerequisites before proceeding.
 
 **Default Font**: Times New Roman throughout all documents (unless user specifies otherwise).
 
@@ -584,7 +584,7 @@ IF ANY VERIFICATION FAILS: Stop and complete missing task first.
 - ✅ **Insert ALL charts from Task 4** - Not just a few, ALL 25-35 charts throughout
 - ✅ **Create ALL tables from Task 2/3** - Extract every financial table, don't skip any
 - ✅ **Use Task 1 content verbatim** - Copy/paste full Company 101 sections (6-8K words)
-- ✅ **Professional quality only** - This must be indistinguishable from JPMorgan/Goldman Sachs research
+- ✅ **Professional quality only** - This must be indistinguishable from top-tier institutional research
 
 **NEVER:**
 - ❌ "This section would include..." - WRITE THE ACTUAL SECTION
@@ -707,7 +707,7 @@ Detailed instructions for each task are in separate reference files to keep this
 
 ## Quality Standards
 
-All outputs meet institutional standards from leading investment banks (JPMorgan, Goldman Sachs, Morgan Stanley):
+All outputs meet the standards of leading institutional research desks:
 
 - **Comprehensive**: Meet all minimum requirements
 - **Detailed**: Specific data and examples, not generic statements
@@ -779,7 +779,7 @@ A successful initiation report workflow should:
 5. Numbers cross-check between outputs
 6. Final report is publication-ready
 
-**Output quality**: Institutional (JPMorgan/Goldman/Morgan Stanley level)
+**Output quality**: Institutional, top-tier sell-side level
 **Use case**: First-time comprehensive coverage of a company
 
 ---

@@ -31,7 +31,7 @@ This document provides step-by-step instructions for executing Task 1 (Company R
 - **For Private Companies:**
   - Company website and blog
   - Press releases and media coverage
-  - LinkedIn for management bios
+  - Company website and leadership pages for management bios
   - Press releases and funding announcements for funding history
 
 ### Secondary Sources (Industry/Competitive)
@@ -39,7 +39,7 @@ This document provides step-by-step instructions for executing Task 1 (Company R
 - Industry research reports (publicly available)
 - News articles and trade publications
 - Market research reports
-- LinkedIn profiles for key executives
+- Public professional profiles for key executives
 
 ### Key Information to Extract
 
@@ -120,7 +120,7 @@ This document provides step-by-step instructions for executing Task 1 (Company R
    - COO, CTO, or other C-suite (2 additional)
 
 2. **Research each executive**
-   - Find LinkedIn profile
+   - Find their public professional profile
    - Review DEF 14A for background
    - Search for press interviews
    - Note tenure at company

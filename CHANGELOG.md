@@ -2,6 +2,11 @@
 
 All notable changes to this plugin are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## 0.1.5 — 2026-07-09
+
+- In-band update notice: skills declare their catalog version and compare it against the latest version reported by the connector (`start_here` / `about_us`), nudging users to restart Claude when an update exists
+- Removed the last external brand references (quality-benchmark and research-channel mentions) — the only named data source is The Balanced Investor Club
+
 ## 0.1.4 — 2026-07-09
 
 - Manifest metadata: homepage and repository links for directory listings
