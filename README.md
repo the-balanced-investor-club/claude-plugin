@@ -41,9 +41,29 @@ claude plugin install the-balanced-investor-club@the-balanced-investor-club-for-
 
 > **If the tools still don't appear** after a restart: add the connector manually once — Settings, then Connectors, then Add custom connector, with the URL `https://thebalancedinvestorclub.com/api/mcp/mcp` — and authorize it. The plugin picks up that authorization from then on.
 
+## Try it
+
+Three prompts to see it working, right after install:
+
+1. *"What's the market pulse today?"* — aggregate mood counts across the coverage universe
+2. *"Build a comps analysis for AAPL versus MSFT and GOOGL"* — the `/comps` workflow with live fundamentals and statements
+3. *"Draft my morning note"* — mood shifts, news and the earnings calendar; add your own watchlists by signing in
+
 ### What the connector adds
 
 Market data tools work without an account. Signing in (free) adds your own data: Stock Tracker, Trading Journal and Trust Score, so workflows like portfolio reviews and thesis tracking can read your actual positions instead of a spreadsheet you paste in.
+
+## Privacy and security
+
+- Market data tools are read-only and anonymous — no account needed.
+- Signing in (OAuth 2.1) adds tools scoped to your own data: Stock Tracker, Trading Journal, Trust Score. Each is gated by an explicit permission scope, and you can revoke access anytime from your Claude settings.
+- Nothing here executes transactions or connects to a brokerage.
+- The fine print lives on the site: [Privacy](https://thebalancedinvestorclub.com/privacy) · [Terms](https://thebalancedinvestorclub.com/terms) · [Disclaimer](https://thebalancedinvestorclub.com/disclaimer)
+- Security reports: see [SECURITY.md](SECURITY.md)
+
+## Built with
+
+The catalog in this repository is Markdown skills plus Python helper scripts for the spreadsheet workflows. The connector behind it is a TypeScript / Next.js API, with a data pipeline on AWS (Lambda, Step Functions) and MongoDB Atlas — the same stack that runs [thebalancedinvestorclub.com](https://thebalancedinvestorclub.com).
 
 ## How this relates to Claude for Financial Services
 
