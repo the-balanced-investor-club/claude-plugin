@@ -7,7 +7,7 @@
     {
       "name": "the-balanced-investor-club",
       "displayName": "The Balanced Investor Club for Claude",
-      "source": "./plugins/the-balanced-investor-club",
+      "source": "./plugins/core",
       "description": "55 financial workflows (earnings analysis, comps, DCF, morning notes, portfolio reviews and more) served by The Balanced Investor Club connector. Educational content, not investment advice."
     }
   ]
