@@ -5,7 +5,7 @@ All notable changes to this plugin are documented here. Versions follow [Semanti
 ## 0.2.0 — 2026-07-09
 
 - **9 agents**, adapted from the upstream catalog: model-builder, earnings-reviewer, market-researcher, pitch-agent, meeting-prep-agent, gl-reconciler, month-end-closer, statement-auditor, valuation-reviewer. Agents run whole multi-step workflows and return the deliverable; every output remains a draft for professional review
-- **Club branding in deliverables**: Excel models and decks now use the club palette (ink section headers, green column headers and totals) and Inter (fallback Calibri) instead of the classic banking navy and Times New Roman. Semantic cell coding (blue inputs, black formulas, green links) is unchanged. New `BRANDING.md` is the single source of truth; the logo lockup ships in `assets/`
+- **Club branding in deliverables**: new `BRANDING.md` as single source of truth; the logo ships in `assets/`
 - Plugin folder renamed to `plugins/core` (install slug unchanged)
 
 ## 0.1.5 — 2026-07-09
