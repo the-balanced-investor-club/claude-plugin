@@ -5,6 +5,26 @@ description: Build and maintain a calendar of upcoming catalysts across a covera
 
 # Catalyst Calendar
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
+> already appends the disclaimer to every response — do not add a second one.
+
+## Data source
+
+| What | Tool |
+|------|------|
+| Earnings dates, IPOs, the calendar itself | `get_market_calendar` |
+| The names the user actually follows | `get_my_watchlists` |
+| What the company has guided to | `get_earnings_estimates` |
+| Their own thesis, so an event can test it | `list_my_trades` (the `thesis` field) |
+
+**If the connector is not available in this session: STOP.** Do not fill the gap from memory and do
+not web-search it. A number with no provenance looks exactly like a number with one, and that is
+precisely what makes it dangerous. Tell the user: "I need The Balanced Investor Club connector for
+this — it isn't connected in this session. Install the plugin (or reconnect it), start a new chat,
+and ask again." A restart is often required right after installing.
+
+**Do not use web search for market data. Ever.**
+
 ## Workflow
 
 ### Step 1: Define Coverage Universe
@@ -47,9 +67,9 @@ For each company, identify upcoming events:
 
 ### Step 3: Calendar View
 
-| Date | Event | Company/Sector | Type | Impact (H/M/L) | Our Positioning | Notes |
-|------|-------|---------------|------|-----------------|----------------|-------|
-| | | | Earnings/Corp/Industry/Macro | | Long/Short/Neutral | |
+| Date | Event | Company/Sector | Type | Impact (H/M/L) | What it would prove | Notes |
+|------|-------|---------------|------|-----------------|--------------------|-------|
+| | | | Earnings/Corp/Industry/Macro | | Which thesis pillar it tests | |
 
 ### Step 4: Weekly Preview
 
@@ -63,10 +83,10 @@ Each week, generate a forward-looking summary:
 **Next Week Preview:**
 - Early heads-up on important events coming
 
-**Position Implications:**
-- Events that could move specific positions
-- Any pre-positioning recommended
-- Risk management ahead of binary events
+**What each event would prove:**
+- Which pillar of the reader's thesis this event actually tests
+- What result would confirm it, and what result would break it — **decide both BEFORE the event**, because afterwards the answer will feel obvious either way
+- **No positioning. No pre-positioning. No suggestion to act ahead of anything.** A calendar tells you what is coming, not what to do about it
 
 ### Step 5: Output
 
@@ -82,6 +102,22 @@ Each week, generate a forward-looking summary:
 - Some catalysts are recurring (monthly industry data) — build a template and auto-populate
 - Color-code by impact level: Red = high impact, Yellow = moderate, Green = routine
 - Archive past catalysts with the actual outcome — builds pattern recognition over time
+
+---
+
+## What this skill does NOT do
+
+- **It does not position for an event.** No pre-positioning, no "ahead of the print", no direction of
+  any kind. A calendar tells you what is coming. It does not tell you what to do about it, and the
+  gap between those two things is the whole product.
+- **It does not predict the outcome.** It records what an event **would prove** — and the discipline
+  is to write down both answers, the confirming one and the breaking one, **before** the event. After
+  it, whichever happened will feel like it was always obvious.
+- **It does not treat every date as a catalyst.** Most earnings reports change nothing. An event only
+  earns a row if it can actually move a pillar of the reader's thesis.
+- **It does not let a passed catalyst disappear.** Archive it **with what actually happened.** That
+  archive is where pattern recognition comes from, and it is the most valuable thing this skill
+  builds.
 
 ---
 

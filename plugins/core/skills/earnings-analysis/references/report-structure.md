@@ -17,10 +17,16 @@ This document provides complete page-by-page templates and formatting requiremen
 
 [Current Date]
 
-Rating: [MAINTAIN/RAISE/LOWER] [RATING]
+Educational exercise — not investment advice.
+We're educators, not advisors. We don't tell anyone what to buy or sell, and that
+includes you. The numbers come from assumptions you set; change them and they change.
+
 Price (as of [date]): $XX.XX
-Price Target: [OLD → NEW if changed, or MAINTAIN $XXX]
 ```
+
+The framing block above is defined once in `plugins/core/OUTPUT-BLOCK.md`. Reproduce it; do not
+paraphrase it. **There is no rating line and no price target line.** The header states what the
+company reported and what the reader is holding in their hand — not a verdict on it.
 
 **Top Section - Quick Summary Box:**
 ```
@@ -38,19 +44,18 @@ Key Takeaways:
 ■ [Takeaway 3 - one sentence]
 ```
 
-**Main Content - Investment Impact (3-4 bullets):**
+**Main Content - What Changed (3-4 bullets):**
 
 Use ■ character with **bold headers** and paragraph-length explanations:
 
 ```
-■ **Results beat on strong [segment/geography/product], maintaining positive momentum**
+■ **Results beat on strong [segment/geography/product]**
 
-Q[X] revenue of $X.XB exceeded our $X.XB estimate by X% and consensus by X%,
-driven primarily by [specific driver]. [Segment] revenue grew X% YoY (vs. our
+Q[X] revenue of $X.XB exceeded the $X.XB estimate by X% and consensus by X%,
+driven primarily by [specific driver]. [Segment] revenue grew X% YoY (vs. the
 X% estimate), while [segment] grew X% (vs. X% estimate). Management highlighted
-[specific products/initiatives] as key growth drivers and maintained confident
-tone on outlook. The beat demonstrates [thesis point], reinforcing our positive
-view.
+[specific products/initiatives] as key growth drivers. The beat speaks to
+[thesis pillar] — that is the pillar this quarter actually informed.
 
 ■ **Margins expanded XXbps YoY despite [headwind], showcasing operational leverage**
 
@@ -60,10 +65,21 @@ view.
 
 [Detailed guidance analysis paragraph...]
 
-■ **Maintaining [RATING] with [raised/unchanged] $XXX price target**
+■ **What this changes, and what would prove it wrong**
 
-[Investment conclusion paragraph...]
+Implied value range under these assumptions: $XX – $XX – $XX.
+What moves it most: [driver] ±[X]pt → ±[Y]% on the range.
+What would prove this read wrong: [the specific, checkable condition — a metric,
+a threshold, a date. "If gross margin doesn't reach 22% by FY28, the base case
+collapses."]
+
+The current price of $XX sits [inside / above / below] that range, which means the
+market is already assuming [X]. Whether that assumption holds is the reader's call,
+not ours.
 ```
+
+**Never write a fourth bullet that concludes with a verdict.** No "maintaining", no rating, no price
+target. The closing bullet gives the range, the sensitivity and the falsifier — and then stops.
 
 **Bottom Section - Updated Estimates Table:**
 
@@ -224,7 +240,7 @@ Updated DCF inputs based on Q[X] results:
 - Terminal growth: X.X% (unchanged)
 - WACC: X.X% (unchanged)
 
-Updated DCF fair value: $XXX (prior: $XXX)
+Updated implied value range: $XX – $XX – $XX (prior: $XX – $XX – $XX)
 ```
 
 **Comparable Companies:**
@@ -233,15 +249,29 @@ Updated DCF fair value: $XXX (prior: $XXX)
 Given [rationale], we believe [premium/discount/inline] valuation is warranted.
 ```
 
-**Price Target Methodology:**
+**Valuation Range Methodology:**
 ```
-Our $XXX price target (prior: $XXX) is based on:
-- XX% DCF
-- XX% NTM P/E of XX.Xx (vs. peers at XX.Xx)
-- XX% EV/EBITDA
+The implied value range of $XX – $XX – $XX comes from:
+- DCF, across a WACC × terminal-growth grid
+- NTM P/E of XX.Xx (vs. peers at XX.Xx)
+- EV/EBITDA
 
-Implied upside: +XX% from current price of $XXX
+What moves the range most:
+- WACC ±1pt      → ±XX% on the implied value
+- Terminal growth ±0.5pt → ±XX%
+- FY[X] margin ±1pt      → ±XX%
+
+The current price of $XXX sits [inside / above / below] this range. Read that as:
+the market is already assuming [the growth and margin the price requires]. Whether
+that assumption is reasonable is the question — not what to do about it.
+
+What would prove this range wrong: [the specific, checkable condition]
 ```
+
+**No single figure. No "price target". No "implied upside".** A range with its drivers is honest
+about how much confidence the number deserves. A point estimate pretends to a precision the model
+does not have — and a point estimate next to the current price is a recommendation, whatever it is
+called.
 
 ### Updated Estimates Detail
 
@@ -277,7 +307,7 @@ Source: [Firm Name] estimates
 
 **Embed 1-2 charts:**
 - Chart 9: P/E or EV/EBITDA bands
-- Chart 10: Price target walk (old → new)
+- Chart 10: Implied value range walk (prior range → new range, with the drivers of the shift)
 
 ---
 
@@ -305,8 +335,9 @@ Source: [Firm Name] estimates
 ## FORMATTING REQUIREMENTS
 
 ### 1. Page 1 Requirements
-- Clear rating (MAINTAIN OUTPERFORM, RAISE TO BUY, etc.)
-- Updated price target prominently displayed
+- **The educational framing block, at the top** (per `plugins/core/OUTPUT-BLOCK.md`)
+- **No rating. No price target.** Not on page 1, not anywhere
+- The implied value **range** with its sensitivity, and the falsifier
 - Summary table with old/new estimates
 - 3-4 paragraph-length bullets with ■ character
 
@@ -352,7 +383,7 @@ Revenue of $2.45B beat consensus of $2.39B by $60M (2.5%)¹
 Management raised FY2024 revenue guidance to $9.8-10.0B from prior $9.5-9.7B²
 
 ² Q3 2024 Earnings Call, November 7, 2024, CFO prepared remarks
-  [Hyperlink "Earnings Call" to: https://seekingalpha.com/article/...]
+  [Hyperlink "Earnings Call" to the transcript on the company's IR site: https://investor.company.com/...]
   Prior guidance from Q2 earnings call August 8, 2024
   [Hyperlink "Q2 earnings call" to August transcript]
 ```

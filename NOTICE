@@ -1,12 +1,37 @@
 The Balanced Investor Club for Claude
 Copyright 2026 The Balanced Investor Club
 
-This product includes software and skill definitions adapted from
+This product includes skill definitions adapted from
 Claude for Financial Services (https://github.com/anthropics/financial-services),
 Copyright Anthropic, PBC, licensed under the Apache License, Version 2.0.
 
+Adapted skills carry an attribution line stating that the file was modified.
+Skills written from scratch by The Balanced Investor Club carry none, because
+they are not derived from anything.
+
 Modifications by The Balanced Investor Club:
-- Data connectors replaced with The Balanced Investor Club MCP connector
-- Skill data sourcing sections rewritten for the above connector
-- Attribution and educational disclaimers appended to each skill
-- Repackaged as a single installable plugin
+
+- Re-scoped, not re-badged. The upstream catalogue serves bankers, private-equity
+  analysts and fund administrators. This one serves a person trying to understand
+  a company. The workflows that presuppose a client book, a data room or an
+  investment committee were removed; the ones that stayed had their audience
+  changed, and with it the object of the skill.
+
+- The sell-side rating apparatus was removed entirely: ratings, price targets,
+  implied upside, and the quality gates that required them. Where a verdict would
+  sit, deliverables now carry the implied value range, its sensitivity, and what
+  would prove the read wrong.
+
+- Data connectors replaced with The Balanced Investor Club MCP connector.
+  Web search for market data is prohibited throughout.
+
+- Skills written from scratch, not adapted: trade-log, journal-mirror,
+  stock-tracker, mood-regime, screener, macro-read, dividends, reverse-dcf,
+  ownership-context, transcript-vs-numbers.
+
+- The educational framing and disclaimer moved from the bottom of each SKILL.md
+  — where the model read them and no reader ever saw them — into the generated
+  document itself, defined once in OUTPUT-BLOCK.md and referenced everywhere.
+
+- A verifier added (scripts/verify-skill.sh) and wired into CI. A rule that
+  nothing enforces gets followed about eleven percent of the time; we measured it.

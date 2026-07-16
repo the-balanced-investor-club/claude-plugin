@@ -56,7 +56,11 @@ Before delivering an initiation report, verify all items below are complete.
 **Page 1 Requirements:**
 - [ ] "INITIATING COVERAGE" header present (NOT "Company Update")
 - [ ] Thesis-focused title (NOT event-driven like "Strong Q4 Results")
-- [ ] Rating box with rating, price, target price, 52-week range, market cap, EV
+- [ ] **Educational framing block present, at the top** (per `plugins/core/OUTPUT-BLOCK.md`)
+- [ ] Facts box with price, 52-week range, market cap, EV — **and the implied value range,
+      what moves it, and what would prove the read wrong**
+- [ ] **NO rating. NO price target. NO buy/sell/hold verdict anywhere in the report** — and none
+      relabelled as BULLISH / BEARISH
 - [ ] 3-4 paragraph-length bullets with ■ character and bold headers
 - [ ] Financial & valuation metrics table with 2-3 years historical, 2 years projected
 - [ ] Table shows "A" suffix for actuals, "E" suffix for estimates
@@ -167,7 +171,7 @@ Before delivering an initiation report, verify all items below are complete.
 - [ ] EPS numbers match across both files
 - [ ] Margin percentages match across both files
 - [ ] Valuation numbers match across both files
-- [ ] Price target matches across both files
+- [ ] Implied value range matches across both files
 - [ ] All projected years match across both files
 
 **Verification Method**: Spot check 10-15 key numbers between DOCX report and XLS model.

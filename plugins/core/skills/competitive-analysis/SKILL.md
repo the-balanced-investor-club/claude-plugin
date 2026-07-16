@@ -5,6 +5,27 @@ description: Framework for building competitive landscape decks — market posit
 
 # Competitive Landscape Mapping
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
+> already appends the disclaimer to every response — do not add a second one.
+
+## Data source
+
+| What | Tool |
+|------|------|
+| Everyone in the industry | `list_securities_by` |
+| How they compare, side by side | `compare_tickers`, `get_fundamentals` |
+| Where value is accruing | `get_income_statement`, `get_sector_returns` |
+| What each of them is doing | `get_news` |
+| What they said they were doing | `get_earnings_transcript` |
+
+**If the connector is not available in this session: STOP.** Do not fill the gap from memory and do
+not web-search it. A number with no provenance looks exactly like a number with one, and that is
+precisely what makes it dangerous. Tell the user: "I need The Balanced Investor Club connector for
+this — it isn't connected in this session. Install the plugin (or reconnect it), start a new chat,
+and ask again." A restart is often required right after installing.
+
+**Do not use web search for market data. Ever.**
+
 Build a complete competitive analysis deck. This is a two-phase process: gather requirements and get outline approval first, then build.
 
 ## Environment check
@@ -277,6 +298,20 @@ Before finishing:
 - Charts are real chart objects
 
 Run standard visual verification checks on every slide — this catches overlaps, overflow, and low-contrast text that don't show up when you're reading back the XML.
+
+---
+
+## What this skill does NOT do
+
+- **It does not pick a winner.** Mapping who competes on what is analysis. Naming who will win is a
+  forecast, and dressing it as a "positioning score" does not change that.
+- **It does not rate competitors.** The dot-scale in the comparison table describes an attribute; it
+  is not a grade, and it must never be summed into a ranking.
+- **It does not confuse a moat with a good year.** Four quarters of margin expansion is a result.
+  Whether it is defensible is a different question, and the honest answer is usually that you cannot
+  tell yet.
+- **It does not accept a company's own account of its position.** Management describes the landscape
+  it would like to be in. The filings and the numbers describe the one it is in.
 
 ---
 

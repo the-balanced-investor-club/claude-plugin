@@ -5,6 +5,16 @@ description: Clean up messy spreadsheet data — trim whitespace, fix inconsiste
 
 # Clean Data
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+
+## Perimeter
+
+**This skill uses no market data and never web-searches.** It works only on the spreadsheet the user
+brings to the session. Nothing here needs the connector, and nothing here should reach for it.
+
+If the user asks a question that needs market data, say so and hand off — do not answer it from
+memory.
+
 Clean messy data in the active sheet or a specified range.
 
 ## Environment
@@ -48,6 +58,19 @@ Show a summary table before changing anything:
 - For destructive operations (removing duplicates, filling blanks, overwriting originals), confirm with the user first
 - After each category of fix (whitespace → casing → number conversion → dates → dedup), show the user a sample of what changed and get confirmation before moving to the next category
 - Report a before/after summary of what changed
+
+---
+
+## What this skill does NOT do
+
+- **It does not overwrite the original.** The cleaned output goes in a helper column, as a formula,
+  where the transformation stays visible. A cleaning step you cannot see is a cleaning step you
+  cannot audit — and the day the numbers look wrong, that column is the only way to find out why.
+- **It does not guess what a value was meant to be.** An ambiguous date, a mixed-type column, a
+  number that might be text — these get **flagged**, not silently coerced. Silent coercion is how a
+  dataset quietly becomes fiction.
+- **It does not delete rows it thinks are wrong.** It marks them. The user decides.
+- **It does not interpret the data.** It cleans it. What the numbers mean is somebody else's job.
 
 ---
 

@@ -19,7 +19,7 @@ This is the final assembly task. It cannot be completed without all previous wor
 **IF ANY OF TASKS 1, 2, 3, OR 4 ARE NOT COMPLETE**: Stop immediately and inform the user which tasks need to be completed first. The specific requirements are:
 - Task 1: Company research document (6-8K words)
 - Task 2: Financial model with all 6 tabs
-- Task 3: Valuation analysis with price target and recommendation
+- Task 3: Valuation analysis with the implied value range, its sensitivity and the falsifier
 - Task 4: Charts zip file with 25-35 charts
 
 Do not attempt to create placeholder content, substitute missing sections, or assemble an incomplete report. The report requires ALL inputs to be publication-ready.
@@ -95,8 +95,9 @@ It must be:
 
 ### Task 3 Verification:
 - [ ] Valuation analysis complete?
-- [ ] Price target determined?
-- [ ] Recommendation set? (BUY/HOLD/SELL)
+- [ ] Implied value range derived, with its sensitivity?
+- [ ] The falsifier stated?
+- [ ] NO rating, NO price target, NO verdict anywhere?
 - [ ] DCF analysis complete with sensitivity table?
 - [ ] Comparable companies analysis complete with statistical summary?
 
@@ -150,10 +151,10 @@ It must be:
 
 1. **"INITIATING COVERAGE" header** (NOT "Company Update")
 2. **Thesis-focused title** (e.g., "AI Platform Leader Positioned for 40% CAGR")
-3. **Rating box** with:
-   - Rating (BUY/OUTPERFORM/HOLD/UNDERPERFORM/SELL)
+3. **Facts box** with:
+   - NO rating. NO price target. The box carries facts and the implied range only
    - Current price
-   - Target price
+   - Implied value range (bear / base / bull)
    - 52-week range
    - Market cap
    - Enterprise value
@@ -420,14 +421,14 @@ Valuation Implications:
 - Weighting rationale (e.g., DCF 50%, Comps 40%, Precedent 10%)
 - Weighted average calculation
 - Valuation range (low/base/high)
-- Final price target: $XX
+- Implied value range: $XX - $XX - $XX
 
-**Price Target & Recommendation (300-500 words)**
-- Final recommendation (BUY/OUTPERFORM/HOLD/UNDERPERFORM/SELL)
-- Price target: $XX (XX% upside from current $XX)
+**What the Range Says, and What Would Break It (300-500 words)**
+- The falsifier: what would prove this read wrong. NO rating, NO price target, NO verdict
+- Implied value range: $XX - $XX - $XX. Current price $XX sits [inside/above/below] it, which means the market already assumes [X]
 - Time horizon: 12 months
 - Key catalysts (3-5 with specific timeframes)
-- Key risks to price target (3-5 with impact quantification)
+- What would break the base case (3-5, each a specific and checkable condition)
 
 ### Pages 41-50: Appendices
 
@@ -684,7 +685,7 @@ These sections interpret the financial model.
 - Comparables rationale
 - Precedent transactions (if applicable)
 - Reconciliation and weighting
-- Price target derivation
+- Implied value range derivation, with its sensitivity
 
 ### Step 4: Write Synthesis Sections
 
@@ -703,9 +704,9 @@ These sections interpret the financial model.
 - 8-12 risks total
 - Each risk: 50-100 words
 
-#### C. Price Target & Recommendation (300-500 words)
+#### C. What the Range Says, and What Would Break It (300-500 words)
 - Final recommendation
-- Price target with upside %
+- Implied value range, and where the current price sits inside it
 - Key catalysts with timeframes
 - Key risks to target
 
@@ -922,7 +923,7 @@ Use Claude's DOCX and XLSX skills to:
 
 2. **Read Task 3 markdown file**
    - Use Read tool: `[Company]_Valuation_Analysis_[Date].md`
-   - Identify sections by markdown headers: DCF Analysis, Comparable Companies, Price Target
+   - Identify sections by markdown headers: DCF Analysis, Comparable Companies, Implied Value Range
 
 3. **DCF Analysis section**
    - Add heading: 'DCF Analysis' (level 2)
@@ -967,11 +968,11 @@ Use Claude's DOCX and XLSX skills to:
      - Extract valuation methods (DCF, Comps, Precedent Transactions if applicable)
      - Create Word table showing: Method, Low Case, Base Case, High Case, Weight, Weighted Value
 
-6. **Price Target & Recommendation**
-   - Add heading: 'Price Target and Recommendation' (level 2)
-   - Extract 'Price Target' section from Task 3 markdown
+6. **What the Range Says**
+   - Add heading: 'What the Range Says, and What Would Break It' (level 2)
+   - Extract the implied-value-range section from Task 3 markdown
    - Convert markdown to Word paragraphs
-   - Should include: Final recommendation (BUY/HOLD/SELL), price target with % upside, key catalysts, key risks
+   - Should include: the implied value range, what moves it, what the current price already assumes, the falsifier, key catalysts. NO rating, NO price target, NO verdict
 
 **Result after Phase D**: Pages 31-40 complete (~10 pages, 3-4K words, 5-6 charts, 4-5 tables)
 
@@ -1004,7 +1005,7 @@ Use Claude's DOCX skill to:
 #### Phase F: Write Page 1 Investment Summary
 **NOW write Page 1 - after all analysis complete**
 - INITIATING COVERAGE header
-- Rating box
+- Facts box (no rating, no price target)
 - 3-4 detailed bullets synthesizing entire report
 - Financial summary table
 - Stock price chart
@@ -1088,7 +1089,7 @@ LENGTH REQUIREMENTS:
 PAGE 1 FORMAT:
 - [ ] "INITIATING COVERAGE" header present
 - [ ] Thesis-focused title (not generic)
-- [ ] Rating box complete with all elements
+- [ ] Facts box complete. NO rating and NO price target present anywhere
 - [ ] Stock price chart (Figure 1) embedded
 - [ ] 3-4 detailed bullets with ■ character
 - [ ] Each bullet has **bold header** + 3-5 sentences
@@ -1134,7 +1135,7 @@ CITATIONS & HYPERLINKS:
 DATA ACCURACY:
 - [ ] All numbers match financial model exactly
 - [ ] Revenue figures consistent across all tables/text
-- [ ] Price target matches valuation analysis
+- [ ] Implied value range matches the valuation analysis
 - [ ] All growth rates calculated correctly
 - [ ] All percentages sum to 100% where applicable
 
@@ -1258,7 +1259,7 @@ A successful equity research report should:
 
 2. **Have properly formatted Page 1**
    - "INITIATING COVERAGE" header
-   - Rating box, analyst info, chart, bullets, table
+   - Facts box, analyst info, chart, bullets, table
 
 3. **Meet all section word count minimums**
    - Especially Projection Assumptions (2,000-3,000) ⭐

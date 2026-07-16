@@ -23,7 +23,7 @@ This template provides the structure for creating a comprehensive equity researc
 
 **IMPORTANT STRUCTURAL NOTES:**
 - This is an "Investment Update" or "Company Update" page, not "Executive Summary"
-- Uses a rating box in top left corner
+- Uses a **facts box** in the top left corner — **never a rating box**
 - Features stock price performance chart (Figure 1) prominently
 - Contains 3-4 detailed bullet points with ■ character
 - Each bullet has **bold topic header** followed by 3-5 sentence explanation
@@ -32,15 +32,22 @@ This template provides the structure for creating a comprehensive equity researc
 
 ### Layout Structure
 
-**TOP LEFT - RATING BOX:**
+**TOP LEFT - FACTS BOX (never a rating box):**
 ```
-Rating:             [OUTPERFORM / NEUTRAL / UNDERWEIGHT / etc.]
 Price ([Date]):     $[XX.XX]
-Target Price:       $[XX.XX]
 52-Week Range:      $[XX.XX] - $[XX.XX]
 Market Cap:         $[XX.X]B
 Enterprise Value:   $[XX.X]B
+
+Implied value range (this report's assumptions):
+                    $[XX] — $[XX] — $[XX]   (bear / base / bull)
+Moves most on:      [driver] ±[X]pt → ±[Y]%
+Wrong if:           [the specific, checkable condition]
 ```
+
+**There is no `Rating:` line and no `Target Price:` line.** Those would be a recommendation, whatever
+they are labelled. What goes in their place is the range, what drives it, and what breaks it — which
+is more useful and is not a verdict.
 
 **TOP LEFT - RESEARCH ANALYSTS:**
 ```
@@ -60,8 +67,11 @@ Source: Company data, [Firm Name] estimates.
 
 **MAIN CONTENT - GRAY HEADER BAR:**
 ```
-[OUTPERFORM / NEUTRAL / etc.] RECOMMENDATION / COMPANY UPDATE
+COMPANY UPDATE — EDUCATIONAL EXERCISE, NOT INVESTMENT ADVICE
 ```
+
+The framing block (per `plugins/core/OUTPUT-BLOCK.md`) sits directly under this bar, before any
+analysis. **The bar never carries a rating.**
 
 **MAIN CONTENT - DETAILED BULLETS (3-4 bullets):**
 
@@ -592,7 +602,7 @@ DCF Analysis                50%       $XX - $YY        $ZZ
 Trading Comparables         30%       $XX - $YY        $ZZ
 Precedent Transactions      20%       $XX - $YY        $ZZ
                            ────       ─────────────    ─────────
-Weighted Average Price Target         $AA - $BB        $CC
+Blended implied value            $AA - $BB        $CC
 ```
 
 ### DCF Analysis
@@ -703,20 +713,35 @@ Add vertical line showing current stock price
 Source: [Firm Name] estimates.
 ```
 
-**Price Target & Recommendation**
+**What the Range Says, and What Would Break It**
 ```
 Current Price:              $XX.XX ([Date])
-Price Target:               $YY.YY
-Upside/Downside:            ZZ%
 
-Recommendation:             BUY / HOLD / SELL
-Time Horizon:               12 months
+Implied value range:        $AA — $BB — $CC   (bear / base / bull)
+                            The current price sits [inside / above / below] it.
 
-Catalysts:
+What the current price already assumes:
+                            [e.g. "revenue growth of 14% for a decade and a
+                             terminal margin of 28% — both above anything the
+                             company has yet delivered"]
+
+Moves most on:              WACC ±1pt            → ±XX%
+                            Terminal growth ±0.5pt → ±XX%
+                            FY[X] margin ±1pt     → ±XX%
+
+What would prove this wrong:
+                            [the specific, checkable condition — a metric, a
+                             threshold, a date]
+
+Catalysts to watch:
 • [Near-term catalyst with timeframe]
 • [Medium-term catalyst with timeframe]
 • [Long-term catalyst with timeframe]
 ```
+
+**No `Price Target:` line. No `Recommendation:` line. No time horizon on a target that does not
+exist.** The reader now knows what the price is assuming and what would falsify it. What they do
+with that is theirs.
 
 ---
 
@@ -799,7 +824,7 @@ Catalysts:
 35. Trading comps scatter plot (growth vs. multiple)
 36. Peer valuation multiples (grouped bar)
 37. Valuation football field (range chart)
-38. Price target scenarios (bar with upside/downside)
+38. Implied value range by method (football field, with current price marked)
 
 **Chart Style Guidelines:**
 - **Consistent color scheme** throughout (pick 3-5 brand colors)

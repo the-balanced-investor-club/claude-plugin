@@ -5,6 +5,31 @@ description: Analyze unit economics for PE targets — ARR cohorts, LTV/CAC, net
 
 # Unit Economics Analysis
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
+> already appends the disclaimer to every response — do not add a second one.
+
+## Data source
+
+| What | Tool |
+|------|------|
+| Revenue, margins, the shape of the P&L | `get_income_statement`, `get_fundamentals` |
+| Whether the growth is funded by cash | `get_cash_flow` |
+| The same metrics across peers | `compare_tickers`, `list_securities_by` |
+| What management said the cohorts do | `get_earnings_transcript` |
+
+**If the connector is not available in this session: STOP.** Do not fill the gap from memory and do
+not web-search it. A number with no provenance looks exactly like a number with one, and that is
+precisely what makes it dangerous. Tell the user: "I need The Balanced Investor Club connector for
+this — it isn't connected in this session. Install the plugin (or reconnect it), start a new chat,
+and ask again." A restart is often required right after installing.
+
+**Do not use web search for market data. Ever.**
+
+⚠️ **Most of what this skill wants is not disclosed.** Cohort tables, CAC by channel, gross churn —
+public companies rarely publish them. **Work from what is in the filings and the call, and say
+plainly which inputs you had to leave empty.** An analysis built on three invented cohorts is worse
+than no analysis, because it is persuasive.
+
 ## Workflow
 
 ### Step 1: Identify Business Model
@@ -93,6 +118,21 @@ Synthesize into a revenue quality assessment:
 - Differentiate between contracted ARR and actual recognized revenue
 - For usage-based models, focus on consumption trends and expansion patterns rather than traditional ARR metrics
 - Professional services revenue should be evaluated separately — it's not recurring and margins are typically lower
+
+---
+
+## What this skill does NOT do
+
+- **It does not invent a cohort.** If the company does not disclose retention by vintage, that is a
+  fact about the disclosure, and it goes in the output. Reconstructing one from an assumed churn rate
+  produces a chart that looks like evidence and is not.
+- **It does not report net retention without gross.** **A net retention rate above 100% can hide
+  brutal churn** if expansion is strong enough. Both, always, side by side — this is the single most
+  common way a SaaS deck lies without saying anything false.
+- **It does not score revenue quality.** A 1-to-5 subjective grade is a rating with a friendlier
+  label. Show the metrics, show the benchmarks, and let the reader form the view.
+- **It does not treat a benchmark as a target.** "LTV:CAC above 3× is healthy" is a rule of thumb from
+  a different set of companies in a different decade. It is context, not a pass mark.
 
 ---
 

@@ -1,0 +1,513 @@
+## Section 1: Document Structure & Setup
+
+### Header Block (Rows 1-3)
+```
+Row 1: [ANALYSIS TITLE] - COMPARABLE COMPANY ANALYSIS
+Row 2: [List of Companies with Tickers] • [Company 1 (TICK1)] • [Company 2 (TICK2)] • [Company 3 (TICK3)]
+Row 3: As of [Period] | All figures in [USD Millions/Billions] except per-share amounts and ratios
+```
+
+**Why this matters:** Establishes context immediately. Anyone opening this file knows what they're looking at, when it was created, and how to interpret the numbers.
+
+### Visual Convention Standards (OPTIONAL - User preferences and uploaded templates always override)
+
+**IMPORTANT: These are suggested defaults only. Always prioritize:**
+1. User's explicit formatting preferences
+2. Formatting from any uploaded template files
+3. Company/team style guides
+4. These defaults (only if no other guidance provided)
+
+**Suggested Font & Typography:**
+- **Font family**: Inter (fallback Calibri) (professional, readable, industry standard)
+- **Font size**: 11pt for data cells, 12pt for headers
+- **Bold text**: Section headers, company names, statistic labels
+
+**Default Color & Shading — Club Palette (minimal is better):**
+- **Keep it restrained** — only the club palette: ink, pale green, light grey and white (see `BRANDING.md`). Do NOT introduce navy, light blue, oranges, reds, or multiple accent colors. A clean comps sheet uses 3-4 colors total. Negative values and warnings use amber `#9A7B3A`, never red.
+- **Section headers** (e.g., "OPERATING STATISTICS & FINANCIAL METRICS"):
+  - Ink background (`#28333C`)
+  - White bold text
+  - Full row shading across all columns
+- **Column headers** (e.g., "Company", "Revenue", "Margin"):
+  - Pale green background (`#E7EFE6`)
+  - Black bold text
+  - Centered alignment
+- **Data rows**:
+  - White background for company data
+  - Black text for formulas; blue text for hardcoded inputs
+- **Statistics rows** (Maximum, 75th Percentile, etc.):
+  - Light grey background (`#F2F2F2`)
+  - Black text, left-aligned labels
+- **That's the whole palette**: ink + pale green + light grey + white. Nothing else unless the user's template says otherwise.
+
+**Suggested Formatting Conventions:**
+- **Decimal precision**:
+  - Percentages: 1 decimal (12.3%)
+  - Multiples: 1 decimal (13.5x)
+  - Dollar amounts: No decimals, thousands separator (69,632)
+  - Margins shown as percentages: 1 decimal (68.7%)
+- **Borders**: No borders (clean, minimal appearance)
+- **Alignment**: All metrics center-aligned for clean, uniform appearance
+- **Cell dimensions**: All column widths should be uniform/even, all row heights should be consistent (creates clean, professional grid)
+
+**Note:** If the user provides a template file or specifies different formatting, use that instead.
+
+---
+
+## Section 2: Operating Statistics & Financial Metrics
+
+### Core Columns (Start with these)
+1. **Company** - Names with consistent formatting
+2. **Revenue** - Size metric (can be LTM, quarterly, or annual depending on context)
+3. **Revenue Growth** - Year-over-year percentage change
+4. **Gross Profit** - Revenue minus cost of goods sold
+5. **Gross Margin** - GP/Revenue (fundamental profitability)
+6. **EBITDA** - Earnings before interest, tax, depreciation, amortization
+7. **EBITDA Margin** - EBITDA/Revenue (operating efficiency)
+
+### Optional Additions (Choose based on industry/purpose)
+- **Quarterly vs LTM** - Include both if seasonality matters
+- **Free Cash Flow** - For capital-intensive or SaaS businesses
+- **FCF Margin** - FCF/Revenue (cash generation efficiency)
+- **Net Income** - For mature, profitable companies
+- **Operating Income** - For businesses with varying D&A
+- **CapEx metrics** - For asset-heavy industries
+- **Rule of 40** - Specifically for SaaS (Growth % + Margin %)
+- **FCF Conversion** - For quality of earnings analysis (advanced)
+
+### Formula Examples (Using Row 7 as example)
+```excel
+// Core ratios - these are always calculated
+Gross Margin (F7): =E7/C7
+EBITDA Margin (H7): =G7/C7
+
+// Optional ratios - include if relevant
+FCF Margin: =[FCF]/[Revenue]
+Net Margin: =[Net Income]/[Revenue]
+Rule of 40: =[Growth %]+[FCF Margin %]
+```
+
+**Golden Rule:** Every ratio should be [Something] / [Revenue] or [Something] / [Something from this sheet]. Keep it simple.
+
+### Statistics Block (After company data)
+
+**CRITICAL: Add statistics formulas for all comparable metrics (ratios, margins, growth rates, multiples).**
+
+```
+[Leave one blank row for visual separation]
+- Maximum: =MAX(B7:B9)
+- 75th Percentile: =QUARTILE(B7:B9,3)
+- Median: =MEDIAN(B7:B9)
+- 25th Percentile: =QUARTILE(B7:B9,1)
+- Minimum: =MIN(B7:B9)
+```
+
+**Columns that NEED statistics (comparable metrics):**
+- Revenue Growth %, Gross Margin %, EBITDA Margin %, EPS
+- EV/Revenue, EV/EBITDA, P/E, Dividend Yield %, Beta
+
+**Columns that DON'T need statistics (size metrics):**
+- Revenue, EBITDA, Net Income (absolute size varies by company scale)
+- Market Cap, Enterprise Value (not comparable across different-sized companies)
+
+**Note:** Add one blank row between company data and statistics rows for visual separation. Do NOT add a "SECTOR STATISTICS" or "VALUATION STATISTICS" header row.
+
+**Why quartiles matter:** They show distribution, not just average. A 75th percentile multiple tells you what "premium" companies trade at.
+
+---
+
+## Section 3: Valuation Multiples & Investment Metrics
+
+### Core Valuation Columns (Start with these)
+1. **Company** - Same order as operating section
+2. **Market Cap** - Current market valuation
+3. **Enterprise Value** - Market Cap ± Net Debt/Cash
+4. **EV/Revenue** - How much market pays per dollar of sales
+5. **EV/EBITDA** - How much market pays per dollar of earnings
+6. **P/E Ratio** - Price relative to net earnings
+
+### Optional Valuation Metrics (Choose based on context)
+- **FCF Yield** - FCF/Market Cap (for cash-focused analysis)
+- **PEG Ratio** - P/E/Growth Rate (for growth companies)
+- **Price/Book** - Market value vs. book value (for asset-heavy businesses)
+- **ROE/ROA** - Return metrics (for profitability comparison)
+- **Revenue/EBITDA CAGR** - Historical growth rates (for trend analysis)
+- **Asset Turnover** - Revenue/Assets (for operational efficiency)
+- **Debt/Equity** - Leverage (for capital structure analysis)
+
+**Key Principle:** Include 3-5 core multiples that matter for your industry. Don't include every possible metric just because you can.
+
+### Formula Examples
+```excel
+// Core multiples - always include these
+EV/Revenue: =[Enterprise Value]/[LTM Revenue]
+EV/EBITDA: =[Enterprise Value]/[LTM EBITDA]
+P/E Ratio: =[Market Cap]/[Net Income]
+
+// Optional multiples - include if data available
+FCF Yield: =[LTM FCF]/[Market Cap]
+PEG Ratio: =[P/E]/[Growth Rate %]
+```
+
+### Cross-Reference Rule
+**CRITICAL:** Valuation multiples MUST reference the operating metrics section. Never input the same raw data twice. If revenue is in C7, then EV/Revenue formula should reference C7.
+
+### Statistics Block
+Same structure as operating section: Max, 75th, Median, 25th, Min for every metric. Add one blank row for visual separation between company data and statistics. Do NOT add a "VALUATION STATISTICS" header row.
+
+---
+
+## Section 4: Notes & Methodology Documentation
+
+### Required Components
+
+**Data Sources & Quality:**
+- Where did the data come from? (The Balanced Investor Club connector: name the tool, e.g. `get_income_statement`)
+- What period does it cover? (Q4 2024, audited figures)
+- How was it verified? (Cross-checked across connector tools, e.g. statement totals vs `get_fundamentals`)
+- Note: Prioritize the connector for accuracy and traceability; record the fetch date next to each source
+
+**Key Definitions:**
+- EBITDA calculation method (Gross Profit + D&A, or Operating Income + D&A)
+- Free Cash Flow formula (Operating CF - CapEx)
+- Special metrics explained (Rule of 40, FCF Conversion)
+- Time period definitions (LTM, CAGR calculation periods)
+
+**Valuation Methodology:**
+- How was Enterprise Value calculated? (Market Cap + Net Debt)
+- What growth rates were used? (Historical CAGR, forward estimates)
+- Any adjustments made? (One-time items excluded, normalized margins)
+
+**Analysis Framework:**
+- What's the investment thesis? (Cloud/SaaS efficiency)
+- What metrics matter most? (Cash generation, capital efficiency)
+- How should readers interpret the statistics? (Quartiles provide context)
+
+---
+
+## Section 5: Choosing the Right Metrics (Decision Framework)
+
+### Start with "What question am I answering?"
+
+**"Which company is undervalued?"**
+→ Focus on: EV/Revenue, EV/EBITDA, P/E, Market Cap
+→ Skip: Operational details, growth metrics
+
+**"Which company is most efficient?"**
+→ Focus on: Gross Margin, EBITDA Margin, FCF Margin, Asset Turnover
+→ Skip: Size metrics, absolute dollar amounts
+
+**"Which company is growing fastest?"**
+→ Focus on: Revenue Growth %, EBITDA CAGR, User/Customer Growth
+→ Skip: Margin metrics, leverage ratios
+
+**"Which is the best cash generator?"**
+→ Focus on: FCF, FCF Margin, FCF Conversion, CapEx intensity
+→ Skip: EBITDA, P/E ratios
+
+### Industry-Specific Metric Selection
+
+**Software/SaaS:**
+Must have: Revenue Growth, Gross Margin, Rule of 40
+Optional: ARR, Net Dollar Retention, CAC Payback
+Skip: Asset Turnover, Inventory metrics
+
+**Manufacturing/Industrials:**
+Must have: EBITDA Margin, Asset Turnover, CapEx/Revenue
+Optional: ROA, Inventory Turns, Backlog
+Skip: Rule of 40, SaaS metrics
+
+**Financial Services:**
+Must have: ROE, ROA, Efficiency Ratio, P/E
+Optional: Net Interest Margin, Loan Loss Reserves
+Skip: Gross Margin, EBITDA (not meaningful for banks)
+
+**Retail/E-commerce:**
+Must have: Revenue Growth, Gross Margin, Inventory Turnover
+Optional: Same-Store Sales, Customer Acquisition Cost
+Skip: Heavy R&D or CapEx metrics
+
+### The "5-10 Rule"
+
+**5 operating metrics** - Revenue, Growth, 2-3 margins/efficiency metrics
+**5 valuation metrics** - Market Cap, EV, 3 multiples
+**= 10 total columns** - Enough to tell the story, not so many you lose the thread
+
+If you have more than 15 metrics, you're probably including noise. Edit ruthlessly.
+
+---
+
+## Section 6: Best Practices & Quality Checks
+
+### Before You Start
+1. **Define the peer group** - Companies must be truly comparable (similar business model, scale, geography)
+2. **Choose the right period** - LTM smooths seasonality; quarterly shows trends
+3. **Standardize units upfront** - Millions vs. billions decision affects everything
+4. **Map data sources** - Know where each number comes from
+
+### As You Build
+1. **Input all raw data first** - Complete the blue text before writing formulas
+2. **Add cell comments to ALL hard-coded inputs** - Right-click cell → Insert Comment → Document source OR assumption
+
+   **For sourced data, cite exactly where it came from:**
+   - Example: "The Balanced Investor Club connector - get_fundamentals MSFT, accessed 2024-10-02"
+   - Example: "Q4 2024 10-K filing, page 42, line item 'Total Revenue'"
+   - Example: "The Balanced Investor Club connector - get_earnings_estimates MSFT, consensus EPS as of 2024-10-02"
+   - **Include hyperlinks when possible**: Right-click cell → Link → paste the deep link the connector tool returns (thebalancedinvestorclub.com/...)
+
+   **For assumptions, explain the reasoning:**
+   - Example: "Assumed 15% EBITDA margin based on peer median, company does not disclose"
+   - Example: "Estimated Enterprise Value as Market Cap + $50M net debt (from Q3 balance sheet, Q4 not yet available)"
+   - Example: "Forward P/E based on street consensus EPS of $3.45 (average of 12 analyst estimates)"
+
+   **Why this matters**: Enables audit trails, data verification, assumption transparency, and future updates
+3. **Build formulas row by row** - Test each calculation before moving on
+4. **Use absolute references for headers** - $C$6 locks the header row
+5. **Format consistently** - Percentages as percentages, not decimals
+6. **Add conditional formatting** - Highlight outliers automatically
+
+### Sanity Checks
+- **Margin test**: Gross margin > EBITDA margin > Net margin (always true by definition)
+- **Multiple reasonableness**: 
+  - EV/Revenue: typically 0.5-20x (varies widely by industry)
+  - EV/EBITDA: typically 8-25x (fairly consistent across industries)
+  - P/E: typically 10-50x (depends on growth rate)
+- **Growth-multiple correlation**: Higher growth usually means higher multiples
+- **Size-efficiency trade-off**: Larger companies often have better margins (scale benefits)
+
+### Common Mistakes to Avoid
+❌ Mixing market cap and enterprise value in formulas
+❌ Using different time periods for numerator and denominator (LTM vs quarterly)
+❌ Hardcoding numbers into formulas instead of cell references
+❌ **Hard-coded inputs without cell comments citing the source OR explaining the assumption**
+❌ Missing source citations (tool name + access date) on hardcoded inputs
+❌ Including too many metrics without clear purpose
+❌ Including non-comparable companies (different business models)
+❌ Using outdated data without disclosure
+❌ Calculating averages of percentages incorrectly (should be median)
+
+---
+
+## Section 6: Advanced Features
+
+### Dynamic Headers
+For columns showing calculations, use clear unit labels:
+```
+Revenue Growth (YoY) % | EBITDA Margin | FCF Margin | Rule of 40
+```
+
+### Quartile Analysis Benefits
+Instead of just mean/median, quartiles show:
+- **75th percentile** = "Premium" companies trade here
+- **Median** = Typical market valuation
+- **25th percentile** = "Discount" territory
+
+This helps answer: "Is our target company trading rich or cheap vs. peers?"
+
+### Industry-Specific Modifications
+
+**Software/SaaS:**
+- Add: ARR, Net Dollar Retention, CAC Payback Period
+- Emphasize: Rule of 40, FCF margins, gross margins >70%
+
+**Healthcare:**
+- Add: R&D/Revenue, Pipeline value, Regulatory status
+- Emphasize: EBITDA margins, growth rates, reimbursement risk
+
+**Industrials:**
+- Add: Backlog, Order book trends, Geographic mix
+- Emphasize: ROIC, asset turnover, cyclical adjustments
+
+**Consumer:**
+- Add: Same-store sales, Customer acquisition cost, Brand value
+- Emphasize: Revenue growth, gross margins, inventory turns
+
+---
+
+## Section 7: Workflow & Practical Tips
+
+### Step-by-Step Process
+1. **Set up structure** (30 minutes)
+   - Create all headers
+   - Format cells (blue for inputs, black for formulas)
+   - Lock in units and date references
+
+2. **Gather data** (60-90 minutes)
+   - Pull from The Balanced Investor Club connector (statements, fundamentals, prices); if the connector is unavailable, stop and ask the user to connect it
+   - Input all raw numbers in blue
+   - Document sources in notes section
+
+3. **Build formulas** (30 minutes)
+   - Start with simple ratios (margins)
+   - Progress to multiples (EV/Revenue)
+   - Add cross-checks (do margins make sense?)
+
+4. **Add statistics** (15 minutes)
+   - Copy formula structure for all columns
+   - Verify ranges are correct (B7:B9, not B7:B10)
+   - Check quartile logic
+
+5. **Quality control** (30 minutes)
+   - Run sanity checks
+   - Verify formula references
+   - Check for #DIV/0! or #REF! errors
+   - Compare against known benchmarks
+
+6. **Documentation** (15 minutes)
+   - Complete notes section
+   - Add data sources
+   - Define methodologies
+   - Date-stamp the analysis
+
+### Pro Tips
+- **Save templates**: Build once, reuse forever
+- **Color-code outliers**: Conditional formatting for values >2 standard deviations
+- **Link to source files**: Cite the connector tool name and access date (e.g., "get_fundamentals, 2024-10-02") and use the deep links the tools return
+- **Version control**: Save as "Comps_v1_2024-12-15" with clear dating
+- **Collaborative reviews**: Have someone else check your formulas
+
+### Excel Formatting Checklist (Optional - adapt to user preferences)
+- [ ] Font set to user's preferred style (default: Inter (fallback Calibri), 11pt data, 12pt headers)
+- [ ] Section headers formatted per user's template (default: ink #28333C with white bold text)
+- [ ] Column headers formatted per user's template (default: pale green #E7EFE6 with black bold text)
+- [ ] Statistics rows formatted per user's template (default: light gray #F2F2F2)
+- [ ] No borders applied (clean, minimal appearance)
+- [ ] **Column widths set to uniform/even width** (creates clean, professional appearance)
+- [ ] **Row heights set to consistent height** (typically 20-25pt for data rows)
+- [ ] Numbers formatted with proper decimal precision and thousands separators
+- [ ] **All metrics center-aligned** for clean, uniform appearance
+- [ ] **One blank row for separation between company data and statistics rows**
+- [ ] **No separate "SECTOR STATISTICS" or "VALUATION STATISTICS" header rows**
+- [ ] **Every hard-coded input cell has a comment with either: (1) exact data source, OR (2) assumption explanation**
+- [ ] **Hyperlinks added to cells where applicable** (deep links returned by connector tools)
+
+---
+
+## Section 8: Example Template Layout
+
+**Simple Version (Start here):**
+```
+┌─────────────────────────────────────────────────────────────┐
+│ TECHNOLOGY - COMPARABLE COMPANY ANALYSIS                    │
+│ Microsoft • Alphabet • Amazon                               │
+│ As of Q4 2024 | All figures in USD Millions                │
+├─────────────────────────────────────────────────────────────┤
+│ OPERATING METRICS                                           │
+├──────────┬─────────┬─────────┬──────────┬──────────────────┤
+│ Company  │ Revenue │ Growth  │ Gross    │ EBITDA  │ EBITDA │
+│          │ (LTM)   │ (YoY)   │ Margin   │ (LTM)   │ Margin │
+├──────────┼─────────┼─────────┼──────────┼─────────┼────────┤
+│ MSFT     │ 261,400 │ 12.3%   │ 68.7%    │ 205,100 │ 78.4%  │
+│ GOOGL    │ 349,800 │ 11.8%   │ 57.9%    │ 239,300 │ 68.4%  │
+│ AMZN     │ 638,100 │ 10.5%   │ 47.3%    │ 152,600 │ 23.9%  │
+│          │         │         │          │         │        │ [blank row]
+│ Median   │ =MEDIAN │ =MEDIAN │ =MEDIAN  │ =MEDIAN │=MEDIAN │
+│ 75th %   │ =QUART  │ =QUART  │ =QUART   │ =QUART  │=QUART  │
+│ 25th %   │ =QUART  │ =QUART  │ =QUART   │ =QUART  │=QUART  │
+├─────────────────────────────────────────────────────────────┤
+│ VALUATION MULTIPLES                                         │
+├──────────┬──────────┬──────────┬──────────┬────────────────┤
+│ Company  │ Mkt Cap  │ EV       │ EV/Rev   │ EV/EBITDA │ P/E│
+├──────────┼──────────┼──────────┼──────────┼───────────┼────┤
+│ MSFT     │3,550,000 │3,530,000 │ 13.5x    │ 17.2x     │36.0│
+│ GOOGL    │2,030,000 │1,960,000 │  5.6x    │  8.2x     │24.5│
+│ AMZN     │2,226,000 │2,320,000 │  3.6x    │ 15.2x     │58.3│
+│          │          │          │          │           │    │ [blank row]
+│ Median   │ =MEDIAN  │ =MEDIAN  │ =MEDIAN  │ =MEDIAN   │=MED│
+│ 75th %   │ =QUART   │ =QUART   │ =QUART   │ =QUART    │=QRT│
+│ 25th %   │ =QUART   │ =QUART   │ =QUART   │ =QUART    │=QRT│
+└──────────┴──────────┴──────────┴──────────┴───────────┴────┘
+```
+
+**Add complexity only when needed:**
+- Include quarterly AND LTM if seasonality matters
+- Add FCF metrics if cash generation is key story
+- Include industry-specific metrics (Rule of 40 for SaaS, etc.)
+- Add more statistics rows if you have >5 companies
+
+---
+
+## Section 9: Industry-Specific Additions (Optional)
+
+Only add these if they're critical to your analysis. Most comps work fine with just core metrics.
+
+**Software/SaaS:**
+Add if relevant: ARR, Net Dollar Retention, Rule of 40
+
+**Financial Services:**
+Add if relevant: ROE, Net Interest Margin, Efficiency Ratio
+
+**E-commerce:**
+Add if relevant: GMV, Take Rate, Active Buyers
+
+**Healthcare:**
+Add if relevant: R&D/Revenue, Pipeline Value, Patent Timeline
+
+**Manufacturing:**
+Add if relevant: Asset Turnover, Inventory Turns, Backlog
+
+---
+
+## Section 10: Red Flags & Warning Signs
+
+### Data Quality Issues
+🚩 Inconsistent time periods (mixing quarterly and annual)  
+🚩 Missing data without explanation  
+🚩 Significant differences between data sources (>10% variance)
+
+### Valuation Red Flags
+🚩 Negative EBITDA companies being valued on EBITDA multiples (use revenue multiples instead)  
+🚩 P/E ratios >100x without hypergrowth story  
+🚩 Margins that don't make sense for the industry
+
+### Comparability Issues
+🚩 Different fiscal year ends (causes timing problems)  
+🚩ixing pure-play and conglomerates  
+🚩 Materially different business models labeled as "comps"
+
+**When in doubt, exclude the company.** Better to have 3 perfect comps than 6 questionable ones.
+
+---
+
+## Section 11: Formulas Reference Guide
+
+### Essential Excel Formulas
+```excel
+// Statistical Functions
+=AVERAGE(range)          // Simple mean
+=MEDIAN(range)           // Middle value
+=QUARTILE(range, 1)      // 25th percentile
+=QUARTILE(range, 3)      // 75th percentile
+=MAX(range)              // Maximum value
+=MIN(range)              // Minimum value
+=STDEV.P(range)          // Standard deviation
+
+// Financial Calculations
+=B7/C7                   // Simple ratio (Margin)
+=SUM(B7:B9)/3            // Average of multiple companies
+=IF(B7>0, C7/B7, "N/A")  // Conditional calculation
+=IFERROR(C7/D7, 0)       // Handle divide by zero
+
+// Cross-Sheet References
+='Sheet1'!B7             // Reference another sheet
+=VLOOKUP(A7, Table1, 2)  // Lookup from data table
+=INDEX(MATCH())          // Advanced lookup
+
+// Formatting
+=TEXT(B7, "0.0%")        // Format as percentage
+=TEXT(C7, "#,##0")       // Thousands separator
+```
+
+### Common Ratio Formulas
+```excel
+Gross Margin = Gross Profit / Revenue
+EBITDA Margin = EBITDA / Revenue
+FCF Margin = Free Cash Flow / Revenue
+FCF Conversion = FCF / Operating Cash Flow
+ROE = Net Income / Shareholders' Equity
+ROA = Net Income / Total Assets
+Asset Turnover = Revenue / Total Assets
+Debt/Equity = Total Debt / Shareholders' Equity
+```
+
+---

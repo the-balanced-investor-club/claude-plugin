@@ -7,13 +7,25 @@ description: Complete, populate and fill out 3-statement financial model templat
 
 # 3-Statement Financial Model Template Completion
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+
+## Data source and perimeter
+
+Historical statements come from the connector: `get_income_statement`, `get_balance_sheet`,
+`get_cash_flow`. **If the connector is not available in this session: STOP** — do not reconstruct a
+balance sheet from memory. Tell the user to connect it and start a new chat.
+
+**Do not use web search for market data. Ever.**
+
+Beyond that, this skill builds a model inside the user's own workbook. **It uses no market data
+beyond the statements above and never web-searches** for anything else.
+
 Complete and populate integrated financial model templates with proper linkages between Income Statement, Balance Sheet, and Cash Flow Statement.
 
 ## ⚠️ CRITICAL PRINCIPLES — Read Before Populating Any Template
 
 **Environment — Office JS vs Python:**
 - **If running inside Excel (Office Add-in / Office JS):** Use Office JS directly. Write formulas via `range.formulas = [["=D14*(1+Assumptions!$B$5)"]]` — never `range.values` for derived cells. No separate recalc; Excel computes natively. Use `context.workbook.worksheets.getItem(...)` to navigate tabs.
-- **If generating a standalone .xlsx file:** Use Python/openpyxl. Write `ws["D15"] = "=D14*(1+Assumptions!$B$5)"`, then run `recalc.py` before delivery.
 - **Office JS merged cell pitfall:** Do NOT call `.merge()` then set `.values` on the merged range — throws `InvalidArgument` because the range still reports its pre-merge dimensions. Instead write value to top-left cell alone, then merge + format the full range: `ws.getRange("A1").values = [["INCOME STATEMENT"]]; const h = ws.getRange("A1:G1"); h.merge(); h.format.fill.color = "#28333C";`
 - All principles below apply identically in either environment.
 
@@ -32,9 +44,9 @@ Complete and populate integrated financial model templates with proper linkages 
 5. **After building CF** → show the user the cash tie-out (CF ending cash = BS cash), confirm before finalizing
 6. **Do NOT populate the entire model end-to-end and present it complete** — break at each statement, show the work, catch errors early
 
-## Formatting — Professional Blue/Grey Palette (Default unless template/user specifies otherwise)
+## Formatting — Club Palette (Default unless template/user specifies otherwise)
 
-**Keep colors minimal.** Use only blues and greys for cell fills. Do NOT introduce greens, yellows, oranges, or multiple accent colors — a clean model uses restraint.
+**Keep colors minimal.** Use only the club palette for cell fills: ink, pale green, medium green, light grey and white (see `BRANDING.md`). Do NOT introduce navy, light blue, yellows, oranges, or multiple accent colors — a clean model uses restraint. Negative values and warnings use amber `#9A7B3A`, never red.
 
 | Element | Fill | Font |
 |---|---|---|
@@ -45,7 +57,7 @@ Complete and populate integrated financial model templates with proper linkages 
 | Cross-tab links | White | Green `#008000` |
 | Check rows / key totals | Medium green `#CBDCCB` | Black bold |
 
-**That's 3 blues + 1 grey + white.** If the template has its own color scheme, follow the template instead.
+**That's ink + pale green + medium green + light grey + white** (the blue/green in the Font column are input/link signals, not fills). If the template has its own color scheme, follow the template instead.
 
 Font color signals *what* a cell is (input/formula/link). Fill color signals *where* you are (header/data/check).
 
@@ -408,6 +420,21 @@ When Master Status shows errors:
 3. Navigate to source tab to investigate
 4. Fix the underlying issue
 5. Return to Checks tab to verify resolution
+
+---
+
+## What this skill does NOT do
+
+- **It does not pass a model that does not balance.** If the balance sheet is out, that is the only
+  finding until it is fixed. **Quantify the gap per period and trace where it breaks** — everything
+  downstream of a broken tie-out is decoration.
+- **It does not plug.** When the three statements disagree, the difference is an unexplained item.
+  **Surface it. Do not force it to zero.** A model that balances because someone made it balance is
+  a model that has stopped telling you anything.
+- **It does not judge the assumptions.** Whether 20% growth is plausible is a judgement the reader
+  makes. The model checks that the arithmetic does what it claims — not that the claim is wise.
+- **It does not value the company.** It builds the engine. What the output is worth is a separate
+  question, asked by a separate skill, and the honest answer usually starts with a range.
 
 ---
 

@@ -1,11 +1,51 @@
 ---
 name: earnings-analysis
-description: Create professional equity research earnings update reports (8-12 pages, 3,000-5,000 words) analyzing quarterly results for companies already under coverage. Fast-turnaround format focusing on beat/miss analysis, key metrics, updated estimates, and revised thesis. Includes 1-3 summary tables and 8-12 charts. Use when user requests "earnings update", "quarterly update", "earnings analysis", "Q1/Q2/Q3/Q4 results", or post-earnings report.
+description: Create professional equity research earnings update reports (8-12 pages, 3,000-5,000 words) analyzing quarterly results for companies already under coverage. Fast-turnaround format focusing on beat/miss analysis, key metrics, updated estimates, and revised thesis. Includes 1-3 summary tables and 8-12 charts. Use when user requests "earnings update", "quarterly update", "earnings analysis", "Q1/Q2/Q3/Q4 results", or post-earnings report. Triggers on "earnings update", "quarterly update", "earnings analysis", "Q1/Q2/Q3/Q4 results", "post-earnings report", "how was the quarter".
 ---
 
-# Equity Research Earnings Update
+# Earnings Update
 
-Create professional **EARNINGS UPDATE REPORTS** analyzing quarterly results for companies already under coverage, following institutional sell-side standards.
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
+> already appends the disclaimer to every response — do not add a second one.
+
+## Data source
+
+| What | Tool |
+|------|------|
+| The latest reported quarter | `get_fundamentals` (`fiscalDateEnding`) |
+| What the company reported | `get_income_statement`, `get_balance_sheet`, `get_cash_flow` |
+| What was expected of it | `get_earnings_estimates` |
+| The call itself, speaker by speaker | `get_earnings_transcript` |
+| When they reported | `get_market_calendar` |
+| Coverage, with sentiment | `get_news` |
+
+**If the connector is not available in this session: STOP.** Do not fill the gap from memory and do
+not web-search it. Training data is outdated in the most dangerous way: confidently. A model that
+"remembers" the quarter will produce a complete, well-formatted, entirely wrong report, and nothing
+on the page will look wrong. Tell the user: "I need The Balanced Investor Club connector for this —
+it isn't connected in this session. Install the plugin (or reconnect it), start a new chat, and ask
+again."
+
+**Do not use web search for market data. Ever.**
+
+Create an **EARNINGS UPDATE REPORT** analyzing quarterly results for a company the reader already
+follows: what beat, what missed, **why**, and what it changes about their understanding of the
+business.
+
+## ⚠️ No verdict — read this before writing a word
+
+This report carries **no rating, no price target, and no buy / sell / hold call**. Not in the
+summary, not on page 1, not in the valuation section, not anywhere. `BULLISH` / `BEARISH` are not
+an escape hatch either — a relabelled recommendation is still a recommendation.
+
+**Where a verdict would sit, the report gives three things instead:**
+
+1. **The implied value range** under the stated assumptions — a range, never a single figure.
+2. **The sensitivity** — what moves that range, and by how much.
+3. **The falsifier** — what would prove this read wrong.
+
+The framing block and the disclaimer are defined once in `plugins/core/OUTPUT-BLOCK.md`. Reproduce
+them in the document; do not restate them here.
 
 **Key Characteristics:**
 - **Length**: 8-12 pages
@@ -89,7 +129,7 @@ Earnings Materials (Q3 2024):
   [Hyperlink to the filing on the company's investor relations site]
 
 • Earnings Call Transcript (November 7, 2024)
-  [Hyperlink to: https://seekingalpha.com/article/...]
+  Source: The Balanced Investor Club connector — get_earnings_transcript, [quarter], retrieved [date]
 
 • Investor Presentation (November 7, 2024)
   [Hyperlink to: https://investor.company.com/presentations/q3-2024.pdf]
@@ -120,20 +160,20 @@ The earnings update process follows 5 phases:
 
 **BEFORE STARTING - COMPLETE THESE 4 STEPS IN ORDER:**
 1. **CHECK TODAY'S DATE** - Write down the current date
-2. **SEARCH FOR LATEST** - Use web search: "[Company] latest earnings results"
+2. **GET THE LATEST QUARTER** — call `get_fundamentals` for `fiscalDateEnding`, then `get_earnings_transcript` and `get_income_statement` for that quarter. **Never web search for earnings data.**
 3. **VERIFY THE DATE** - Confirm earnings release is within last 3 months
 4. **CHECK TRANSCRIPT DATE** - Verify transcript date matches release date
 
-**COMMON MISTAKE**: Using outdated earnings calls from training data instead of searching for the latest.
+**COMMON MISTAKE**: Using outdated earnings calls from training data instead of pulling the latest from the connector.
 
 **REQUIREMENTS:**
-- ✅ Search for latest earnings - do NOT rely on training data
+- ✅ Pull the latest earnings from the connector — do NOT rely on training data, and do NOT web search
 - ✅ Write down today's date and the release date found
 - ✅ Verify release date is within 3 months of today
 - ✅ Verify transcript date matches release date
-- ✅ If dates don't match or are old (>3 months), search again
+- ✅ If dates don't match or are old (>3 months), re-pull from the connector
 
-**See [references/workflow.md](references/workflow.md)** for detailed search procedures and verification steps.
+**See [references/workflow.md](references/workflow.md)** for the connector calls and the verification steps.
 
 ### Phase 2: Analysis (2-3 hours)
 - Beat/miss analysis for each key metric
@@ -162,7 +202,7 @@ Create 8-12 page DOCX report with specific structure.
 **See [references/report-structure.md](references/report-structure.md)** for complete page-by-page templates and formatting requirements.
 
 **High-level structure:**
-- Page 1: Earnings summary with rating and price target
+- Page 1: Educational framing block, earnings summary, key takeaways, and what would prove the read wrong
 - Pages 2-3: Detailed results analysis
 - Pages 4-5: Key metrics & guidance
 - Pages 6-7: Updated investment thesis
@@ -181,7 +221,7 @@ Verify content, formatting, accuracy, and timeliness before delivery.
 **Example**: `Nike_Q2_FY24_Earnings_Update.docx`
 
 **Contents:**
-- Page 1: Summary with rating, price target, key takeaways
+- Page 1: Educational framing block, summary, key takeaways, and the falsifier
 - Pages 2-3: Detailed results analysis
 - Pages 4-5: Key metrics and guidance
 - Pages 6-7: Updated thesis assessment
@@ -226,6 +266,20 @@ Examples of good/bad headlines, tips for success, common mistakes to avoid, and 
 
 **Optional:**
 - XLS skill for model updates (not required for earnings updates)
+
+---
+
+## What this skill does NOT do
+
+- **It does not issue a rating, a price target, or a verdict.** Not on page 1, not in the valuation
+  section, not anywhere. `BULLISH` / `BEARISH` are not an escape hatch — a relabelled recommendation
+  is still a recommendation, and the rules reach implicit ones.
+- **It does not treat an adjusted figure as the truth.** Nor as a lie. Report the comparable and the
+  reported number, and say what sits between them.
+- **It does not accept an adjective as evidence.** "Strong quarter" is not a number. The number is
+  usually two paragraphs further down, in a flatter tone.
+- **It does not write from memory.** Every figure traces to a tool call and a fetch date, or it is
+  marked `[UNSOURCED]`. If you cannot name where a number came from, you cannot use it.
 
 ---
 

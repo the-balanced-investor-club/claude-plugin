@@ -1,5 +1,7 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "the-balanced-investor-club-for-claude",
+  "description": "A thinking companion for the markets, inside Claude. A trading journal that records the thesis and the emotion at entry, a reverse DCF, an earnings-call reader, and real data on 13,000+ instruments. Educational content, not investment advice.",
   "owner": {
     "name": "The Balanced Investor Club"
   },
@@ -8,7 +10,10 @@
       "name": "the-balanced-investor-club",
       "displayName": "The Balanced Investor Club for Claude",
       "source": "./plugins/core",
-      "description": "55 financial workflows (earnings analysis, comps, DCF, morning notes, portfolio reviews and more) served by The Balanced Investor Club connector. Educational content, not investment advice."
+      "description": "A trading journal that records the thesis and the emotion at entry, a reverse DCF, an earnings-call reader, and real market data on 13,000+ instruments. 26 skills, and not one of them issues a rating or a price target. Educational content, not investment advice.",
+      "author": {
+        "name": "The Balanced Investor Club"
+      }
     }
   ]
 }

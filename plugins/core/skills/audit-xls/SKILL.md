@@ -5,6 +5,16 @@ description: Audit a spreadsheet for formula accuracy, errors, and common mistak
 
 # Audit Spreadsheet
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+
+## Perimeter
+
+**This skill uses no market data and never web-searches.** It works only on the spreadsheet the user
+brings to the session. Nothing here needs the connector, and nothing here should reach for it.
+
+If the user asks a question that needs market data, say so and hand off — do not answer it from
+memory.
+
 Audit formulas and data for accuracy and mistakes. Scope determines depth — from quick formula checks on a selection up to full financial-model integrity audits.
 
 ## Step 1: Determine scope
@@ -154,6 +164,20 @@ For **model** scope, prepend a summary line:
 - **Hardcoded overrides are the #1 source of silent bugs** — search aggressively
 - **Sign convention errors** (positive vs negative for cash outflows) are extremely common
 - If the model uses VBA macros, note any macro-driven calculations that can't be audited from formulas alone
+
+---
+
+## What this skill does NOT do
+
+- **It does not change anything without asking.** It finds the problem, quantifies it, and shows the
+  user. Fixing a model you did not build, without permission, is how a small error becomes an
+  invisible one.
+- **It does not pass a model that does not balance.** If the balance sheet is out, **that is the only
+  finding that matters** until it is fixed. Everything downstream of a broken tie-out is decoration.
+- **It does not audit the assumptions.** Whether 12% revenue growth is reasonable is a judgement. The
+  audit checks whether the model does what it says it does — not whether what it says is wise.
+- **It does not report "no errors found" as an absence.** A clean audit **is a finding**, and it is
+  worth stating plainly.
 
 ---
 

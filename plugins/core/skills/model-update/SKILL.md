@@ -5,6 +5,27 @@ description: Update financial models with new data — quarterly earnings, manag
 
 # Model Update
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
+> already appends the disclaimer to every response — do not add a second one.
+
+## Data source
+
+| What | Tool |
+|------|------|
+| The quarter that just landed | `get_income_statement`, `get_balance_sheet`, `get_cash_flow` |
+| What was expected of it | `get_earnings_estimates` |
+| What management said about the next one | `get_earnings_transcript` |
+| The valuation inputs, in one call | `get_valuation_inputs` |
+| The thesis the reader wrote at entry | `list_my_trades` |
+
+**If the connector is not available in this session: STOP.** Do not fill the gap from memory and do
+not web-search it. A number with no provenance looks exactly like a number with one, and that is
+precisely what makes it dangerous. Tell the user: "I need The Balanced Investor Club connector for
+this — it isn't connected in this session. Install the plugin (or reconnect it), start a new chat,
+and ask again." A restart is often required right after installing.
+
+**Do not use web search for market data. Ever.**
+
 ## Workflow
 
 ### Step 1: Identify What Changed
@@ -63,27 +84,35 @@ Recalculate valuation with updated estimates:
 
 | Valuation Method | Prior | Updated | Change |
 |-----------------|-------|---------|--------|
-| DCF fair value | | | |
-| P/E (NTM EPS × target multiple) | | | |
-| EV/EBITDA (NTM EBITDA × target multiple) | | | |
-| **Price Target** | | | |
+| DCF implied value (range) | | | |
+| P/E (NTM EPS × peer multiple) | | | |
+| EV/EBITDA (NTM EBITDA × peer multiple) | | | |
+| **Implied value range** | | | |
 
-### Step 5: Summary & Action
+Each method gives a **range**, not a figure. Show the range. Do not average them into a single
+number, and do not label any number a target.
+
+### Step 5: What Changed in the Read
 
 **Estimate Change Summary:**
-- One paragraph: what changed, why, and what it means for the stock
-- Is this a thesis-changing event or noise?
+- One paragraph: what changed, why, and **which pillar of the thesis it informs**
+- Is this a thesis-changing event, or noise inside a normal quarter's variance?
 
-**Rating / Price Target:**
-- Maintain or change rating?
-- New price target (if changed) with methodology
-- Upside/downside to current price
+**The three things that replace a verdict:**
+- **The range**: where the implied value sits now, and where the current price sits relative to it
+- **The sensitivity**: which assumption moves that range most, and by how much
+- **The falsifier**: what specific, checkable condition would prove this read wrong
+
+**No rating. No price target. No buy/sell/hold call** — and `BULLISH` / `BEARISH` are not an escape
+hatch. This step does not tell the reader what to do. It tells them what they now know, and what
+would change it.
 
 ### Step 6: Output
 
 - Updated Excel model (if user provides the existing model)
 - Estimate change summary (markdown or Word)
-- Updated price target derivation
+- Implied value range with its sensitivity, and the falsifier
+- Framing block and disclaimer, per `plugins/core/OUTPUT-BLOCK.md`
 
 ## Important Notes
 
@@ -93,6 +122,20 @@ Recalculate valuation with updated estimates:
 - If the quarter was noisy, separate signal from noise in your estimate changes
 - Check consensus after updating — how do your revised estimates compare to the Street?
 - Share count matters — dilution from stock comp, converts, or buybacks can materially affect EPS
+
+---
+
+## What this skill does NOT do
+
+- **It does not issue an action.** No maintain, no add, no trim. The model updates; the reader
+  decides. The step where an analyst would write "our recommendation" is the step this skill deletes.
+- **It does not rate conviction.** Show which pillar moved and by how much. That carries the same
+  information with the evidence still attached to it.
+- **It does not project forward from a single quarter.** One print is one data point, and a model
+  rebuilt around it every ninety days is a model that is chasing noise.
+- **It does not reconcile silently.** If the reported figures do not tie to the model's prior
+  actuals, **stop and say so.** A model that has been quietly re-based to fit the new numbers has
+  forgotten what it used to believe, which was the only useful thing about it.
 
 ---
 

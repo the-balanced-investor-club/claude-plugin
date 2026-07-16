@@ -2,246 +2,74 @@
 
 This document provides detailed step-by-step instructions for each phase of the earnings update process.
 
-## ⚠️⚠️⚠️ CRITICAL WARNING: ALWAYS USE THE LATEST EARNINGS DATA ⚠️⚠️⚠️
+## ⚠️ The data comes from the connector. Not from memory, and not from the web.
 
-**STOP AND READ THIS FIRST:**
+**Training data is outdated, and it is outdated in the most dangerous way: confidently.** A model
+that "remembers" Q3 will produce a complete, well-formatted, entirely wrong earnings report, and
+nothing on the page will look wrong.
 
-Training data is OUTDATED. Actively search for and retrieve the MOST RECENT earnings materials. Using outdated earnings data is the #1 mistake in earnings analysis.
+**Do not use web search for market data. Ever.** Not as a primary source, not as a fallback, not to
+"check the latest". Web results are undated and unsourced, and a number you cannot trace is a number
+you cannot defend.
 
-**BEFORE STARTING:**
-1. **CHECK TODAY'S DATE** - Write down the current date
-2. **SEARCH FOR LATEST** - Use web search to find the most recent earnings
-3. **VERIFY THE DATE** - Confirm the earnings release is within the last 3 months
-4. **IF OLDER THAN 3 MONTHS** - Wrong quarter obtained, search again
+**If the connector tools are not available in this session: STOP.** Do not build the report from
+substitute sources. Tell the user: "I need The Balanced Investor Club connector for this — it isn't
+connected in this session. Install the plugin (or reconnect it), start a new chat, and ask again."
 
 ## Phase 1: Earnings Data Collection (30-60 minutes)
 
-### Step 1: Identify the Latest Earnings Period
+### Step 1: Establish today's date, from the connector
 
-**CRITICAL**: ALWAYS SEARCH FOR THE LATEST EARNINGS - DO NOT RELY ON KNOWLEDGE CUTOFF.
-**CRITICAL**: NEVER USE EARNINGS DATA FROM TRAINING - IT IS OUTDATED.
+**Write down today's date.** Not the date you think it is — the date the connector reports. A model's
+sense of "today" is wrong by however long it has been since it was trained, and every staleness check
+below depends on getting this right.
 
-**Step 1a: Search for Latest Earnings Release**
-
-**🚨 ACTIVELY SEARCH - training data is outdated. 🚨**
-
-**MANDATORY STEP 1: CHECK TODAY'S DATE**
-- **Write down today's date explicitly**: [Month] [Day], [Year]
-- **Use this to verify** that any earnings found are within 3 months
-- **Example**: "Today is October 29, 2024"
-
-**MANDATORY STEP 2: SEARCH FOR "LATEST EARNINGS"**
-- **Use web search** with queries like:
-  - `[Company name] latest earnings results`
-  - `[Company name] most recent quarterly earnings`
-  - `[Ticker symbol] earnings latest quarter`
-- **OR search company investor relations site**:
-  - Go to `investor.[company].com` or `[company].com/investors`
-  - Navigate to "Press Releases", "News", or "Earnings" section
-  - **Sort by date to find MOST RECENT release**
-  - Look for keywords: "earnings", "results", "financial results", "quarterly results"
-
-**MANDATORY STEP 3: VERIFY THE RELEASE DATE**
-- **Look at the date of the earnings release found**
-- **Calculate**: Is this date within the last 3 months from today?
-- **If YES** → Proceed to next step
-- **If NO (older than 3 months)** → 🚨 WRONG QUARTER - Search again for more recent
-
-**❌ COMMON MISTAKES TO AVOID:**
-- ❌ Using earnings data from training without searching
-- ❌ Assuming "Q3 2024" is latest based on expectations
-- ❌ Grabbing the first earnings release found without checking the date
-- ❌ Not comparing the release date to today's date
-- ❌ Proceeding when the release is 4+ months old
-
-**✅ CORRECT APPROACH:**
-- ✅ Check today's date first
-- ✅ Search explicitly for "latest" or "most recent"
-- ✅ Read the actual release date on the materials
-- ✅ Confirm release date is within 3 months of today
-- ✅ If unsure, search again with different terms
-
-**MANDATORY STEP 4: IDENTIFY THE QUARTER**
-- **Read the title/headline** to identify the quarter (Q1, Q2, Q3, Q4 or fiscal quarter)
-- **Read the release date** on the document itself
-- **Verify both the quarter name AND the date are recent**
-
-3. **Alternative search methods if IR site is unclear:**
-   - Web search: `[Company name] latest earnings results`
-   - Web search: `[Company name] most recent quarterly earnings`
-   - Web search: `[Ticker symbol] earnings latest quarter`
-   - The Balanced Investor Club connector: get_market_calendar for the reporting date; the company's investor relations site for the filing itself
-
-**Example searches that find latest data:**
-- "Nike latest earnings results" → Returns most recent quarter reported
-- "AAPL most recent quarterly earnings" → Shows latest Apple earnings
-- "Tesla Q3 2024 earnings" → Results confirm Q3 2024 exists
-
-**Step 1b: Understand Company's Fiscal Calendar**
-
-After identifying the latest quarter from search, understand the company's fiscal year to interpret it correctly:
-
-**Common fiscal year patterns:**
-- **Calendar year (CY)**: Q1=Jan-Mar, Q2=Apr-Jun, Q3=Jul-Sep, Q4=Oct-Dec
-- **Nike fiscal**: Q1=Jun-Aug, Q2=Sep-Nov, Q3=Dec-Feb, Q4=Mar-May (May fiscal year-end)
-- **Apple fiscal**: Q1=Oct-Dec, Q2=Jan-Mar, Q3=Apr-Jun, Q4=Jul-Sep (September fiscal year-end)
-- **Walmart fiscal**: Q1=Feb-Apr, Q2=May-Jul, Q3=Aug-Oct, Q4=Nov-Jan (January fiscal year-end)
-
-Many companies state their fiscal year in the earnings release header. Search `[company] fiscal year calendar` if needed.
-
-**Step 1c: MANDATORY VERIFICATION - Verify Latest Data Obtained**
-
-🛑 **STOP - DO NOT PROCEED until verifying ALL of these:**
-
-- [ ] ✅ **Today's date written down**: [Month] [Day], [Year]
-- [ ] ✅ **Actively searched** using "latest earnings" or "most recent earnings"
-- [ ] ✅ **Earnings release date found**: [Month] [Day], [Year]
-- [ ] ✅ **Verified release is within 3 months of today** (do the math!)
-- [ ] ✅ **Did NOT assume** the quarter based on today's date alone
-- [ ] ✅ **Can see the actual press release** confirming the quarter/period
-- [ ] ✅ **Opened and read** the actual earnings materials (not just assumed they exist)
-
-**🚨 RED FLAGS - If ANY of these are true, WRONG quarter obtained:**
-- 🚨 Release date is more than 90 days old
-- 🚨 Relying on expectations rather than what was FOUND by searching
-- 🚨 Have not actually SEEN a press release or filing confirming this quarter exists
-- 🚨 Used data from training without searching
-- 🚨 Cannot state the exact release date
-- 🚨 Release date found is from 2023 or earlier (when today is 2024+)
-
-**IF ANY RED FLAGS PRESENT**: STOP and search again. Do not proceed with outdated data.
-
-**Step 1c: Handle Naming Variations**
-
-Companies use different terminology - recognize these patterns:
-
-**Quarter terminology:**
-- "Q1 2024", "Q1 FY24", "First Quarter 2024", "1Q24"
-- "Third Quarter Fiscal 2024", "Q3 FY2024", "3Q FY24"
-
-**Earnings release titles:**
-- "[Company] Reports Q3 2024 Results"
-- "[Company] Announces Third Quarter Fiscal 2024 Financial Results"
-- "[Company] Q3 Revenue Grew 15% Year-over-Year"
-
-**Filing searches (company investor relations site):**
-- Company name may differ from common name (e.g., "Meta Platforms, Inc." vs "Facebook")
-- Search by ticker symbol to find filings reliably
-- Look for most recent 10-Q (quarterly) or 10-K (annual if Q4)
-
-### Step 2: Gather Earnings Materials
-
-After SEARCHING FOR and confirming the latest quarter, collect the following:
-
-**⚠️ IMPORTANT: SEARCH for and ACCESS actual documents - do not rely on training data.**
-
-**Primary Materials (REQUIRED):**
-- **Earnings press release** - Usually on company investor relations site under "Press Releases" or "News"
-  - Navigate to IR site and find the actual press release
-  - Search patterns: "[Company name] latest earnings", "[Company name] Q[X] [Year] earnings results"
-  - Look for PDF or HTML version
-  - **Verify the date matches what was found in Step 1** (should be within last 1-3 months)
-  - **Read the actual document** to confirm the quarter and get reported numbers
-
-- **10-Q or 10-K filing** - On the company's investor relations site (usually under "Financials" or "Filings")
-  - Search by ticker symbol
-  - For quarters 1-3: Look for most recent 10-Q
-  - For Q4: Look for 10-K (annual report)
-  - Note: May be filed 1-5 days after earnings release
-  - Link to the filing page on the company's investor relations site
-
-- **Earnings call transcript** - 🚨 **VERIFY THE DATE ON THE TRANSCRIPT** 🚨
-  - **Search for**: "[Company] latest earnings call transcript" or "[Company] Q[X] [Year] earnings call transcript"
-  - **Sources**:
-    - Company IR site (some post transcripts directly)
-    - Web search: "[Company] [latest quarter] earnings call transcript"
-  - **CRITICAL DATE CHECK**:
-    - ✅ **Before using ANY transcript, verify the date on the transcript itself**
-    - ✅ **The transcript date MUST match the earnings release date from Step 1**
-    - ✅ **If transcript says "Q2 2023" but release was "Q3 2024", WRONG transcript obtained**
-    - 🚨 **Common mistake**: Grabbing an old transcript without checking the date
-  - If transcript not yet available, listen to webcast replay or note to wait for transcript
-
-**Supplemental Materials (if available):**
-- **Investor presentation/slides** - Often posted on IR site alongside press release
-  - Usually titled "Q[X] [Year] Earnings Presentation" or "Investor Presentation"
-  - PDF format with slides management presented during earnings call
-
-- **Supplemental data file** - Some companies provide Excel files with detailed metrics
-  - Look for "Supplemental Financial Information" or "Investor Data Sheet"
-
-**Reference Materials (for comparison):**
-- **Prior quarter results** - For QoQ comparison
-  - From prior quarter's earnings release (90 days ago)
-
-- **Prior year same quarter** - For YoY comparison
-  - From same quarter last year (4 quarters ago)
-
-- **Prior estimates** - If this company was previously covered
-  - From last earnings update or initiation report
-  - Check what was estimated for this quarter's metrics
-
-- **Consensus estimates** - From The Balanced Investor Club connector (get_earnings_estimates)
-  - CRITICAL: Use estimates from BEFORE earnings release
-  - Look for "as of [date before earnings]" to ensure pre-announcement consensus
-  - Needed for beat/miss analysis
-
-**🛑 MANDATORY VERIFICATION before proceeding to Step 3:**
-
-**DATES - Verify ALL dates match:**
-- [ ] ✅ **Today's date written down**: _______________
-- [ ] ✅ **Earnings release date**: _______________ (MUST be within 3 months of today)
-- [ ] ✅ **Earnings call transcript date**: _______________ (MUST match release date ±1 day)
-- [ ] ✅ **10-Q/10-K filing date**: _______________ (MUST be same quarter as release)
-- [ ] ✅ **ALL materials show SAME quarter** (e.g., all say "Q3 2024", not mixed quarters)
-
-**SEARCH & ACCESS - Verify active search completed:**
-- [ ] ✅ **SEARCHED** for "latest earnings" (not assumed based on current date)
-- [ ] ✅ **ACCESSED** actual earnings press release and read it
-- [ ] ✅ **OPENED** actual earnings call transcript and verified date
-- [ ] ✅ **CONFIRMED** this is the MOST RECENT quarter by checking dates
-- [ ] ✅ Have full financial results (revenue, EPS, margins, etc.) from actual release
-- [ ] ✅ Have pre-earnings consensus estimates with source date
-
-**🚨 RED FLAGS - STOP if ANY of these are true:**
-- 🚨 Did NOT actually search for or access the earnings materials
-- 🚨 Working from memory or training data instead of current documents
-- 🚨 The earnings release date is more than 90 days old
-- 🚨 Cannot state the EXACT DATE of the earnings release
-- 🚨 The transcript date does NOT match the release date
-- 🚨 Materials show different quarters (e.g., release says Q3 but transcript says Q2)
-- 🚨 Grabbed the first result without verifying the date
-
-### Step 3: Extract Key Metrics
-
-Create a structured summary:
+### Step 2: Find the latest reported quarter
 
 ```
-REPORTED RESULTS vs. ESTIMATES:
-─────────────────────────────────────────────────
-                    Reported    Our Est    Consensus    Beat/(Miss)
-Revenue             $X,XXX      $X,XXX     $X,XXX       $XX (X%)
-Gross Margin        XX.X%       XX.X%      XX.X%        XXbps
-EBITDA              $XXX        $XXX       $XXX         $XX (X%)
-Operating Profit    $XXX        $XXX       $XXX         $XX (X%)
-EPS (Adjusted)      $X.XX       $X.XX      $X.XX        $X.XX
-EPS (GAAP)          $X.XX       $X.XX      $X.XX        $X.XX
-
-KEY BUSINESS METRICS:
-─────────────────────────────────────────────────
-[Metric 1]          XXX         XXX        XXX          +X% YoY
-[Metric 2]          XXX         XXX        XXX          +X% YoY
-[Metric 3]          XXX         XXX        XXX          +X% YoY
+get_fundamentals(ticker)  →  read `fiscalDateEnding`
 ```
 
-### Step 4: Identify Key Themes from Call
+That is the latest quarter the company has actually reported. **Do not infer it from the calendar.**
+Fiscal years are not calendar years: Apple's Q1 ends in December, Nike's in August, Walmart's in
+April. Guessing produces a report about a quarter that does not exist yet.
 
-Listen to or read earnings call transcript and note:
-- Management's tone (confident, cautious, defensive?)
-- Key topics emphasized (product launches, geographic trends, competition)
-- Questions from analysts (what are investors concerned about?)
-- Guidance provided (raised, lowered, maintained, introduced?)
-- Any surprises or unexpected commentary
+### Step 3: Verify it is fresh
+
+- Is `fiscalDateEnding` within the last ~3 months of the connector's date?
+- If it is older, **the company has not reported since.** That is a fact about the company, not a
+  failure of the search. Say so, and ask the user whether they want the last reported quarter or a
+  preview of the next one.
+- Cross-check the report date with `get_market_calendar`.
+
+**Never search again hoping for a newer quarter.** The connector has what the company has filed. If
+it is not there, it does not exist.
+
+### Step 4: Pull the materials
+
+| What you need | Call |
+|---------------|------|
+| Reported figures | `get_income_statement`, `get_balance_sheet`, `get_cash_flow` |
+| What was expected | `get_earnings_estimates` |
+| The call itself, speaker by speaker | `get_earnings_transcript(ticker, quarter)` — quarter formatted `2026Q1` |
+| Market cap, shares, beta, margins | `get_fundamentals` |
+| The report date | `get_market_calendar` |
+| Coverage and sentiment | `get_news` |
+
+**The transcript is the primary source and the one most people skip.** Guidance, segment colour and
+management's own hedges are all in it, in their words, and the Q&A is where they answer questions
+they did not choose.
+
+### Step 5: Verify before you analyse
+
+- [ ] Today's date taken from the connector, written down
+- [ ] `fiscalDateEnding` read from `get_fundamentals`, not assumed
+- [ ] The quarter is within ~3 months, or the gap is explained
+- [ ] Statements, estimates and transcript all pulled for the **same** quarter
+- [ ] **Zero figures from memory. Zero figures from the web.**
+- [ ] Every number traceable to a tool call and a fetch date — anything else is marked `[UNSOURCED]`
+
+**🚩 If you cannot name the tool a number came from, you cannot use the number.**
 
 ## Phase 2: Analysis (2-3 hours)
 
@@ -329,30 +157,35 @@ FY2025E EBITDA          $X.XB       $X.XB       +X.X%      [Brief reason]
 FY2025E EPS             $X.XX       $X.XX       +X.X%      [Brief reason]
 ```
 
-### Step 10: Update Valuation & Price Target
+### Step 10: Update the Valuation Range
 
 Based on updated estimates:
 - Recalculate DCF (use updated cash flows)
 - Update comparable company multiples (if peer group has reported)
-- Determine new fair value
-- Decide if price target changes
+- Produce the **implied value range** across the assumption grid — bear / base / bull, never a
+  single figure
 
-**Price Target Decision:**
-- If estimates changed significantly (>5%) → Usually change price target
-- If estimates changed marginally (<5%) → May maintain price target
-- If thesis strengthened/weakened → May change even without estimate change
+**Show the sensitivity.** Which assumption moves the range most, and by how much? A DCF whose output
+swings 15% on a one-point change in WACC is telling the reader something important about how much
+confidence the number deserves. Say it out loud.
 
-### Step 11: Assess Rating Impact
+**Never collapse the range into a target.** A price target is an opinion with decimals. The range,
+its drivers, and the current price sitting inside or outside it — that is the lesson.
 
-Decide whether to change rating:
-- If results significantly better than expected + guidance raised → Consider upgrade
-- If results significantly worse + guidance cut → Consider downgrade
-- If inline or mixed → Usually maintain rating
+### Step 11: Assess What Changed in the Read
+
+Do **not** decide a rating. There is no rating. Instead, answer:
+
+- **Which pillar of the thesis moved?** Name it. Growth, margin, competitive position, capital
+  allocation — which one did this quarter actually inform?
+- **Did it move enough to matter,** or is this noise inside a normal quarter's variance?
+- **What would prove this read wrong?** State the specific, checkable condition — a metric, a
+  threshold, a date. "If gross margin doesn't reach 22% by FY28, the base case collapses."
 
 **Consider:**
-- Stock reaction (up/down/flat?)
-- Valuation (expensive/cheap relative to new estimates?)
-- Risk/reward (asymmetry shifted?)
+- Stock reaction (up/down/flat?) — and note that the market's reaction is information, not a verdict
+- Where the current price sits relative to the implied range, and what growth that price already assumes
+- Which assumptions are doing the heavy lifting
 
 ## Phase 3: Chart Generation (1-2 hours)
 
@@ -396,7 +229,7 @@ Create charts focusing on QUARTERLY TRENDS and WHAT'S NEW.
 8. **Valuation Chart** (P/E or EV/EBITDA multiple)
    - Historical multiple range
    - Current multiple
-   - Fair value multiple
+   - The multiple the model implies, against the peer median — and what explains the gap
 
 **OPTIONAL CHARTS (if space allows):**
 - Peer comparison (if peers have reported)
@@ -453,10 +286,12 @@ Before publishing, verify:
 - [ ] Beat/miss clearly stated and quantified
 - [ ] Key drivers explained (not just "strong performance")
 - [ ] Updated estimates provided (old vs. new shown)
-- [ ] Price target updated or explicitly maintained
-- [ ] Rating confirmed or changed with rationale
+- [ ] Implied value **range** updated, with its sensitivity shown
+- [ ] The falsifier is stated: what would prove this read wrong
+- [ ] **NO rating. NO price target. NO buy/sell/hold verdict** (and none relabelled as BULLISH/BEARISH)
+- [ ] Framing block and disclaimer present, per `plugins/core/OUTPUT-BLOCK.md`
 - [ ] Guidance analyzed (if provided)
-- [ ] Thesis impact assessed
+- [ ] Thesis impact assessed — which pillar moved
 
 **Formatting:**
 - [ ] Page 1 has summary box and key bullets
@@ -518,8 +353,11 @@ Updated Estimates:
 - FY[Year]E Revenue: $XX.XB (prior: $XX.XB, [+/-]X%)
 - FY[Year]E EPS: $X.XX (prior: $X.XX, [+/-]X%)
 
-Rating: [MAINTAINED / RAISED / LOWERED] [RATING]
-Price Target: $XXX (prior: $XXX) - [+/-]XX% upside
+Implied Value Range (your assumptions): $XX – $XX – $XX
+What moves it most: [driver] ±[X]pt → ±[Y]%
+What would prove this read wrong: [the falsifier]
+
+Educational content, not investment advice. No buy/sell recommendations — observations for your own research.
 
 Deliverable: 8-12 page earnings update report with updated estimates and valuation.
 ```

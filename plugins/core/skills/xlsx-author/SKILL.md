@@ -1,11 +1,21 @@
 ---
 name: xlsx-author
-description: Produce a .xlsx file on disk (headless) instead of driving a live Excel workbook — for managed-agent sessions with no open Office app.
+description: Produce a .xlsx file on disk — a workbook the user can open, poke at and change, with every input on its own tab and a Checks tab that goes red when something breaks. Triggers on "build me a workbook", "export to Excel", "give me the model as a file", "make a spreadsheet", "xlsx".
 ---
 
 # xlsx-author
 
-Use this skill when running **headless** (managed-agent / CMA mode) and you need to deliver an Excel workbook as a **file artifact** rather than editing a live workbook via `mcp__office__excel_*`.
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+
+## Perimeter
+
+**This skill uses no market data and never web-searches.** It works only on the spreadsheet the user
+brings to the session. Nothing here needs the connector, and nothing here should reach for it.
+
+If the user asks a question that needs market data, say so and hand off — do not answer it from
+memory.
+
+Use this skill to deliver an Excel workbook as a **file the user can open, change and re-run**. Every input on its own tab, every calc a formula, and a Checks tab that goes red when something breaks.
 
 ## Output contract
 
@@ -39,7 +49,21 @@ wb.save("./out/model.xlsx")
 
 ## When NOT to use
 
-If `mcp__office__excel_*` tools are available (Cowork plugin mode), use those instead — they drive the user's live workbook with review checkpoints. This skill is the file-producing fallback for headless runs.
+If the user is working inside a live Excel session and the client exposes tools to drive it, use those instead — editing the open workbook with review checkpoints beats handing over a new file. This skill is the file-producing path, and it is the only one this plugin's connector supports.
+
+---
+
+## What this skill does NOT do
+
+- **It does not decide what goes in the workbook.** It builds the file the analysis asked for. The
+  analysis lives in the skill that called it.
+- **It does not send, share or upload anything.** It writes a file to disk. Distribution is a human
+  action, taken outside this skill.
+- **It does not hardcode a calculated value into a formula cell.** Every calc cell is a formula, and
+  every input lives on the Inputs tab. A workbook whose numbers cannot be traced is a screenshot with
+  extra steps.
+- **It does not ship without a Checks tab.** If nothing in the workbook can come back FALSE, nothing
+  in it is being checked.
 
 ---
 

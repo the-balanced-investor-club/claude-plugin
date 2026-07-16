@@ -1,8 +1,10 @@
 ---
-description: Run a stock screen or generate investment ideas
-argument-hint: "[screen criteria, e.g. 'undervalued midcap tech']"
+description: Map and filter a sector or industry, and see what the average hides
+argument-hint: "[sector or industry, e.g. 'Semiconductors']"
 ---
 
-Load the `idea-generation` skill and run quantitative screens or thematic sweeps to surface new investment ideas.
+Load the `screener` skill and map the universe the user asked about.
 
-If criteria are provided, use them. Otherwise ask the user what they're looking for (long/short, sector, style, theme).
+Report both the weighted and the simple average return, and lead with the gap between them — that gap is usually the finding. Name what the screen cannot see.
+
+If a sector or industry is provided, use it. Otherwise ask what they want to map.

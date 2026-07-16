@@ -5,6 +5,27 @@ description: Create comprehensive industry and sector landscape reports covering
 
 # Sector Overview
 
+> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
+> already appends the disclaimer to every response — do not add a second one.
+
+## Data source
+
+| What | Tool |
+|------|------|
+| Every company in the sector or industry | `list_securities_by` |
+| The sector's return — **weighted and simple** | `get_sector_returns`, `get_industry_returns` |
+| The behavioural distribution across the same set | `list_market_moods` |
+| Size, multiples, margins per company | `get_fundamentals` |
+| What is happening, with sentiment | `get_news` |
+
+**If the connector is not available in this session: STOP.** Do not fill the gap from memory and do
+not web-search it. A number with no provenance looks exactly like a number with one, and that is
+precisely what makes it dangerous. Tell the user: "I need The Balanced Investor Club connector for
+this — it isn't connected in this session. Install the plugin (or reconnect it), start a new chat,
+and ask again." A restart is often required right after installing.
+
+**Do not use web search for market data. Ever.**
+
 ## Workflow
 
 ### Step 1: Define Scope
@@ -62,10 +83,10 @@ For each company, brief profile:
 - Recent M&A transaction multiples
 - How does the sector compare to the broader market?
 
-### Step 5: Investment Implications
+### Step 5: The Open Questions
 
-- Where are the best risk/reward opportunities?
-- What thematic bets can be expressed through this sector?
+- What are the live debates in this sector — where do reasonable people disagree, and on what evidence?
+- What would have to change for the sector's story to break? Name the specific, checkable condition.
 - Key debates in the sector (bull vs. bear arguments)
 - Catalysts that could change the sector narrative
 
@@ -86,6 +107,20 @@ For each company, brief profile:
 - Sector overviews age fast — note the date and flag data that may be stale
 - Charts are essential — market size waterfall, competitive positioning matrix, valuation scatter plot
 - If for a client, tailor the "so what" to their specific situation (M&A target identification, competitive positioning, market entry)
+
+---
+
+## What this skill does NOT do
+
+- **It does not name opportunities.** No "best risk/reward", no "where to look first", no thematic
+  bets. It maps a sector. Where a reader goes in it is theirs.
+- **It does not report an average without its dispersion.** The weighted and the simple return usually
+  disagree, sometimes by twenty points, and **the gap is the finding**: it tells you whether the
+  sector's story belongs to the whole sector or to four companies at the top of it.
+- **It does not confuse TAM with a market.** A total addressable market is an arithmetic ceiling, not
+  a forecast, and a sector overview that leads with one is a pitch.
+- **It does not settle the debate.** It names what reasonable people disagree about and on what
+  evidence, then stops. The disagreement is the useful part.
 
 ---
 

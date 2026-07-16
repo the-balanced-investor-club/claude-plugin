@@ -133,7 +133,7 @@ Create all 25 of these charts. Each has a specific purpose in Task 5:
 - chart_30: Trading Comps Scatter Plot
 - chart_31: Peer Multiples Comparison
 - chart_32: Valuation Football Field ⭐ MANDATORY
-- chart_33: Price Target Scenarios
+- chart_33: Implied Value Range by Method (football field, current price marked)
 - chart_34: Historical Valuation Multiples
 
 **Total: 25 Required Charts**
@@ -151,7 +151,7 @@ Add these for greater visual density and storytelling (reach 26-35 total):
 - chart_25: Working Capital Trends
 - chart_26: Debt Maturity Schedule
 - chart_27: Ownership Structure
-- chart_35: Analyst Price Target Distribution
+- chart_35: Sensitivity Tornado (which assumption moves the value most) [OPTIONAL]
 
 **Total Range: 25-35 Charts (25 required + 0-10 optional)**
 
@@ -188,7 +188,7 @@ Understanding where each chart's data comes from:
 - chart_30: Trading Comps Scatter → Comparable Companies tab
 - chart_31: Peer Multiples → Comparable Companies tab
 - chart_32: Valuation Football Field ⭐ → Valuation Summary tab
-- chart_33: Price Target Scenarios → Valuation Summary tab (or calculate from scenarios)
+- chart_33: Implied Value Range by Method (football field, current price marked) → Valuation Summary tab (or calculate from scenarios)
 
 ### From External Sources - 2 charts
 - chart_01: Stock Price Performance → The Balanced Investor Club connector (get_close_history)
@@ -296,9 +296,10 @@ def create_revenue_by_product_chart():
     fig, ax = plt.subplots(figsize=(10, 6))
 
     # Create stacked area chart
+    # Club palette (see BRANDING.md): ink, emerald, medium green, amber. Never matplotlib defaults.
     ax.stackplot(years, product_a, product_b, product_c, product_d,
                  labels=['Product A', 'Product B', 'Product C', 'Product D'],
-                 colors=['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'],
+                 colors=['#28333C', '#4F9173', '#CBDCCB', '#9A7B3A'],
                  alpha=0.8)
 
     # Formatting
@@ -352,15 +353,16 @@ def create_revenue_by_geography_chart():
     width = 0.6
     x = np.arange(len(years_labels))
 
-    p1 = ax.bar(x, north_america, width, label='North America', color='#1f77b4')
+    # Club palette (see BRANDING.md): ink, emerald, medium green, amber. Never matplotlib defaults.
+    p1 = ax.bar(x, north_america, width, label='North America', color='#28333C')
     p2 = ax.bar(x, europe, width, bottom=north_america,
-                label='Europe', color='#ff7f0e')
+                label='Europe', color='#4F9173')
     p3 = ax.bar(x, asia_pacific, width,
                 bottom=np.array(north_america) + np.array(europe),
-                label='Asia-Pacific', color='#2ca02c')
+                label='Asia-Pacific', color='#CBDCCB')
     p4 = ax.bar(x, rest_of_world, width,
                 bottom=np.array(north_america) + np.array(europe) + np.array(asia_pacific),
-                label='Rest of World', color='#d62728')
+                label='Rest of World', color='#9A7B3A')
 
     # Formatting
     ax.set_xlabel('Year', fontsize=12, fontweight='bold')
@@ -447,7 +449,8 @@ def create_valuation_football_field():
 
     # Create horizontal bars
     y_positions = np.arange(len(valuation_methods))
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
+    # Club palette (see BRANDING.md): emerald, ink, medium green. Never matplotlib defaults.
+    colors = ['#4F9173', '#28333C', '#CBDCCB']
 
     for i, (method, low, high, color) in enumerate(
             zip(valuation_methods, valuation_low, valuation_high, colors)):
@@ -462,7 +465,7 @@ def create_valuation_football_field():
     ax.axvline(x=current_price, color='red', linestyle='--', linewidth=2,
                label=f'Current: ${current_price}', alpha=0.7)
 
-    # Add target price line
+    # Mark the current price, and shade the implied value range around it
     ax.axvline(x=target_price, color='black', linestyle='-', linewidth=2,
                label=f'Target: ${target_price}')
 
@@ -549,7 +552,7 @@ create_valuation_football_field()
 # chart_29: DCF Valuation Waterfall
 # chart_30: Trading Comps Scatter Plot
 # chart_31: Peer Multiples Comparison
-# chart_33: Price Target Scenarios
+# chart_33: Implied Value Range by Method (football field)
 # chart_34: Historical Valuation Multiples
 ```
 
@@ -574,7 +577,7 @@ create_valuation_football_field()
 # chart_25: Working Capital Trends
 # chart_26: Debt Maturity Schedule
 # chart_27: Ownership Structure
-# chart_35: Analyst Price Target Distribution
+# chart_35: Sensitivity Tornado — which assumption moves the value most
 ```
 
 These optional charts provide additional visual storytelling and help achieve the "1 chart per 200-300 words" density target in Task 5.
@@ -612,7 +615,7 @@ def create_chart_index():
         "chart_30_trading_comps_scatter.png - Trading Comps Scatter Plot",
         "chart_31_peer_multiples_comparison.png - Peer Multiples Comparison",
         "chart_32_valuation_football_field.png - Valuation Football Field [MANDATORY]",
-        "chart_33_price_target_scenarios.png - Price Target Scenarios",
+        "chart_33_implied_value_range.png - Implied Value Range by Method",
         "chart_34_historical_valuation_multiples.png - Historical Valuation Multiples",
     ]
 
@@ -627,7 +630,7 @@ def create_chart_index():
         "chart_25_working_capital_trends.png - Working Capital Trends [OPTIONAL]",
         "chart_26_debt_maturity_schedule.png - Debt Maturity Schedule [OPTIONAL]",
         "chart_27_ownership_structure.png - Ownership Structure [OPTIONAL]",
-        "chart_35_analyst_price_targets.png - Analyst Price Target Distribution [OPTIONAL]",
+        "chart_35_sensitivity_tornado.png - Sensitivity Tornado [OPTIONAL]",
     ]
 
     with open('chart_index.txt', 'w') as f:

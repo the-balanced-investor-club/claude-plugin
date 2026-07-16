@@ -5,15 +5,18 @@ This document provides examples, tips for success, common mistakes to avoid, and
 ## Example Headlines
 
 ### Good Earnings Update Headlines:
-- "Nike Q2 FY24: DTC Strength Offsets Wholesale Weakness - Maintaining OW, PT $95"
-- "Tesla Q3'24: Cybertruck Ramp Ahead of Plan - Raising Estimates, PT to $285"
-- "LVMH Q4'24: Fashion & Leather Resilient, Wines Weak - In-Line, Reiterating Buy"
-- "Apple Q1 FY24: Services Beat, iPhone Miss - Mixed Quarter, Lowering PT to $185"
+- "Nike Q2 FY24: DTC Strength Offsets Wholesale Weakness - Gross Margin the Line to Watch"
+- "Tesla Q3'24: Cybertruck Ramp Ahead of Plan - Raising Estimates, Deliveries Still the Swing Factor"
+- "LVMH Q4'24: Fashion & Leather Resilient, Wines Weak - In-Line, Mix Doing the Work"
+- "Apple Q1 FY24: Services Beat, iPhone Miss - Mixed Quarter, Hardware Cycle the Open Question"
+
+The headline states **what happened and what it hinges on**. It never states a verdict.
 
 ### Bad Headlines (Avoid):
 - "Nike Quarterly Update" (too generic, no takeaway)
 - "Company Reports Earnings" (states obvious, no analysis)
 - "Q3 Results Analysis" (no company name, no view)
+- "Maintaining Buy, PT $95" (**a rating and a price target — never**)
 
 ## Tips for Success
 
@@ -27,7 +30,8 @@ This document provides examples, tips for success, common mistakes to avoid, and
 
 5. **Show the work**: Old estimates → New estimates with reasons
 
-6. **Update price target if material**: If estimates change >5%, usually PT changes too
+6. **Update the valuation range if material**: If estimates change >5%, the implied range moves too.
+   Show the new range and what drove it. Never collapse it into a single target figure.
 
 7. **Acknowledge the call**: Reference management commentary, don't just analyze the press release
 
@@ -53,9 +57,12 @@ This document provides examples, tips for success, common mistakes to avoid, and
 
 ❌ **Rehashing basics**: Don't spend 3 pages explaining what the company does
 
-❌ **Missing price target update**: If estimates changed materially, PT should too
+❌ **Stale valuation range**: If estimates changed materially, the implied range moved too — show it
 
-❌ **No investment impact**: Must connect results to thesis and rating
+❌ **Emitting a verdict**: A rating, a price target, or a buy/sell/hold call. Never. Not even
+relabelled as BULLISH or BEARISH
+
+❌ **No connection to the reader's thesis**: Say which pillar moved, and what would prove the read wrong
 
 ❌ **Missing citations**: Every number needs a source with clickable hyperlinks
 
@@ -87,12 +94,13 @@ Before delivering earnings update, verify all items below:
 - [ ] Old vs. new estimates clearly shown
 - [ ] Explanation of what changed and why
 
-**Valuation & Rating:**
-- [ ] Price target updated (if warranted by results)
-- [ ] If PT unchanged, explicitly maintained
+**Valuation:**
+- [ ] Implied value **range** updated (if warranted by results) — a range, never a single figure
+- [ ] Sensitivity shown: what moves the range, and by how much
 - [ ] Valuation methodology explained
-- [ ] Rating confirmed or changed with clear rationale
-- [ ] Investment thesis assessed and updated if needed
+- [ ] **The falsifier is stated**: what would prove this read wrong
+- [ ] **NO rating. NO price target. NO buy/sell/hold verdict.** Not relabelled as BULLISH/BEARISH either
+- [ ] Opens with the framing block and closes with the disclaimer — both per `plugins/core/OUTPUT-BLOCK.md`
 
 ### Format & Length Checklist
 
@@ -177,7 +185,7 @@ Before delivering earnings update, verify all items below:
 **Publication Timing:**
 - [ ] Report published within 24-48 hours of earnings release
 - [ ] If later than 48 hours, acknowledged as "delayed reaction"
-- [ ] ✅ **VERIFIED all data is from LATEST quarter by searching for recent earnings**
+- [ ] ✅ **VERIFIED all data is from the latest reported quarter — `fiscalDateEnding` from `get_fundamentals`, never assumed and never web-searched**
 - [ ] ✅ **Did NOT rely on knowledge cutoff - actively searched for current data**
 - [ ] Consensus estimates are pre-earnings (not post-earnings)
 - [ ] No outdated information included
@@ -203,7 +211,8 @@ Before delivering earnings update, verify all items below:
 Run through this quick final check before sending report to user:
 
 ### 5-Minute Final Review:
-1. **Page 1**: Rating clear? Price target updated? Key takeaways compelling?
+1. **Page 1**: Framing block present? Key takeaways compelling? **No rating and no price target
+   anywhere?** Is the falsifier stated?
 2. **Numbers**: Do reported results match company's press release exactly?
 3. **Citations**: Spot check 3-4 figures/tables - all have sources with clickable hyperlinks?
 4. **Estimates**: Old vs. new clearly shown? Changes explained?
@@ -234,8 +243,11 @@ Updated Estimates:
 - FY[Year]E Revenue: $XX.XB (prior: $XX.XB, [+/-]X%)
 - FY[Year]E EPS: $X.XX (prior: $X.XX, [+/-]X%)
 
-Rating: [MAINTAINED / RAISED / LOWERED] [RATING]
-Price Target: $XXX (prior: $XXX) - [+/-]XX% upside
+Implied Value Range (your assumptions): $XX – $XX – $XX
+What moves it most: [driver] ±[X]pt → ±[Y]%
+What would prove this read wrong: [the falsifier]
+
+Educational content, not investment advice. No buy/sell recommendations — observations for your own research.
 
 Deliverables:
 ✓ 8-12 page earnings update report (DOCX)

@@ -396,7 +396,7 @@ Bear Case: $38 - $40
 Base Case: $42 - $46
 Bull Case: $48 - $52
 
-Recommendation: BUY with target price of $45 (midpoint of base case)
+Implied value range: $38 - $45 - $53 (bear / base / bull). Current price $42 sits inside it.
 ```
 
 ### Sanity Checks
@@ -405,14 +405,14 @@ Recommendation: BUY with target price of $45 (midpoint of base case)
 1. **Historical multiples**: Is current valuation in line with history?
 2. **Peer comparison**: Justified premium/discount vs. peers?
 3. **Implied growth**: What growth is market pricing in?
-4. **Implied returns**: IRR from current price to target price
+4. **Implied assumptions**: what growth and margin the CURRENT price already requires (reverse-DCF). Not a target — a reading of what the market has already assumed
 5. **Market cap analysis**: Does total market cap make sense?
 
 ---
 
 ## Conclusion
 
-Using all three valuation methods provides a robust framework for determining fair value:
+Using all three methods gives a range — and, more usefully, shows where they disagree. When the DCF says one thing and the comps say another, that gap is the most informative output of the exercise. Never collapse it into a single figure:
 
 - **DCF** provides intrinsic value based on fundamentals
 - **Trading Comps** reflects current market valuation
