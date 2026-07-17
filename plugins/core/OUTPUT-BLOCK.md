@@ -69,6 +69,23 @@ disclaimers per page is that voice. One, written like a human, is not.
 | Excel | Cell A1 of the first sheet, and the top of the Inputs tab | Bottom of the first sheet |
 | PowerPoint | Cover slide, under the title | Footer of the final slide |
 
+### In chat the connector speaks. In a file, only you do.
+
+The connector appends its own disclaimer to every tool response it returns. So in a chat answer that
+line is **already on screen**, above whatever you write — and a second one underneath it is the
+fourth-deep boilerplate §4 exists to prevent.
+
+**A file is the opposite case. Nothing is appended to a `.docx`, an `.xlsx` or a `.pptx`.** You are
+the only thing writing it. The blocks go in because you put them in, per the table above.
+
+The distinction matters because of where the two end up. A chat answer is read once, in the
+conversation that produced it, next to the connector's line. **A file travels** — it gets saved,
+emailed, and opened months later by someone who never saw that conversation. It is the one that has
+to carry its own context, and it is the one at risk of shipping without any.
+
+> **Never reason "the connector already said it" about a file. The connector has never seen your
+> file.**
+
 ---
 
 ## No verdict — and what replaces it

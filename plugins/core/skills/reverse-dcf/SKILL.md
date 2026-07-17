@@ -5,8 +5,7 @@ description: Turn a valuation on its head. Instead of asking what a company is w
 
 # Reverse DCF
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -69,11 +68,11 @@ A real pull for NVDA:
 
 | | `get_valuation_inputs` | `get_balance_sheet` |
 |---|---|---|
-| Net debt | −$423M | LT debt $7.47B − cash $10.61B = **−$3.14B** |
+| Net debt | −\$423M | LT debt \$7.47B − cash \$10.61B = **−\$3.14B** |
 | Shares outstanding | 24.221B | **24.51B** |
 
 Those are different numbers for the same two things. For NVDA the gap is immaterial — 0.05% of a
-$4.9tn enterprise value — and it would be easy to shrug at. **On a leveraged company it decides the
+\$4.9tn enterprise value — and it would be easy to shrug at. **On a leveraged company it decides the
 answer.**
 
 **The rule, and it holds for every skill in this plugin:**
@@ -93,8 +92,8 @@ disagree with each other, and the disagreement is the finding.**
 A real pull for KO showed:
 
 ```
-FCF (TTM)               $12.562B
-FCF, last full year      $5.296B     ← less than half the TTM figure
+FCF (TTM)               \$12.562B
+FCF, last full year      \$5.296B     ← less than half the TTM figure
 FCF CAGR (~4y)            -17.18%    ← falling
 Revenue growth (YoY)      +12.10%    ← rising
 ```
@@ -185,7 +184,7 @@ Close with **the falsifier**, and make it checkable:
 
 > *"The current price needs free cash flow to compound at 6% from here. It has fallen 17% a year for
 > four. Either the last four years were the anomaly, or the price is. **The next two cash-flow
-> statements will tell you which** — watch the FY26 figure against the $5.3bn the company managed
+> statements will tell you which** — watch the FY26 figure against the \$5.3bn the company managed
 > last year."*
 
 That is a testable claim, with a date and a number the reader can go and check. It is not a
@@ -219,7 +218,7 @@ recommendation, and it is worth more than one.
 - **It does not pick a model quietly.** The choice between a perpetuity and a two-stage fade changes
   the answer more than any assumption inside either of them. Run both, print both, and say that the
   choice was made — because a reader who does not know a choice existed cannot evaluate it.
-- **It does not hide behind precision.** $84.19 is not more truthful than "somewhere in the low
+- **It does not hide behind precision.** \$84.19 is not more truthful than "somewhere in the low
   eighties". Decimals in a DCF are a costume.
 - **It does not work on ETFs or crypto.** The tool is stocks-only, and discounting the free cash flow
   of a coin is a category error.

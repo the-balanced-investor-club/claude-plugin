@@ -37,7 +37,7 @@ Not what they should do about it. That question is not yours, and it is not ours
    **currency** (a tailwind is not performance), **tax and below-the-line** (a guidance raise from
    the tax rate is not an operating improvement), and **margin**, which is usually mentioned once,
    quietly, in a flatter tone.
-5. **Update the model.** Invoke `model-update`. **Reconcile to the reported figures before projecting
+5. **Update the model.** Invoke `model-refresh`. **Reconcile to the reported figures before projecting
    forward** — if they do not tie to the model's prior actuals, stop and say so.
 6. **QC it.** Invoke `audit-xls`.
 7. **Surface for review.** Stage everything as drafts. Publish nothing.
@@ -58,7 +58,7 @@ Not what they should do about it. That question is not yours, and it is not ours
 
 ## Skills this agent uses
 
-`earnings-analysis` · `transcript-vs-numbers` · `model-update` · `audit-xls` · `morning-note` · `thesis-tracker`
+`earnings-analysis` · `transcript-vs-numbers` · `model-refresh` · `audit-xls` · `morning-note-draft` · `thesis-tracker`
 
 ## What this agent does NOT do
 

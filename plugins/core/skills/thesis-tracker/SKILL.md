@@ -5,8 +5,7 @@ description: Keep an investment thesis honest over time. Writes down what you be
 
 # Thesis Tracker
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 

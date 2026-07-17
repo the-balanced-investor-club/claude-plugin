@@ -20,8 +20,7 @@ description: |
   Triggers on "comps", "comparable companies", "peer analysis", "trading comps", "how does it compare to peers", "peer multiples", "is it expensive vs peers", "build a comp set".
 ---
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 >
 > **Branding:** Deliverables follow the club brand. Palette, font, and logo placement are defined in `plugins/core/BRANDING.md`; the logo lockup is `plugins/core/assets/logo.png`. When the user supplies their own template, the template wins.
 

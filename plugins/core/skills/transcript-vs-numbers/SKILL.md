@@ -5,8 +5,7 @@ description: Put what management SAID on the earnings call next to what the fina
 
 # Transcript vs. Numbers
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -73,7 +72,7 @@ These are the ones to check every single time, because they recur:
 > guidance**"* — which is 4–5%, not 10%. **And Q4 will have six days fewer.** The days come back.
 
 **2. Currency.** A tailwind is not performance.
-> *"Comparable EPS of $0.86 increased 18% year-over-year, **helped by 3% currency tailwinds**."*
+> *"Comparable EPS of \$0.86 increased 18% year-over-year, **helped by 3% currency tailwinds**."*
 > Fifteen, not eighteen, is the operating number.
 
 **3. Below-the-line and tax.** Watch where a guidance raise comes from.

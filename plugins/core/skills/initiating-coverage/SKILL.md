@@ -5,8 +5,7 @@ description: Create institutional-quality equity research initiation reports thr
 
 # Initiating Coverage
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -365,9 +364,9 @@ delivers, its prerequisites, and its verification gate. The detailed workflow fo
   not anywhere — and the QC checklist now **fails the report if one appears**. In its place sits a
   facts box: the implied value range, what moves it most, and what would prove the read wrong.
 - **It does not tell the reader what the company is worth.** It shows what each method implies, how
-  far the methods disagree, and what the current price is already assuming. **When DCF says $42 and
-  comps say $78, that disagreement is the most informative thing on the page** — averaging it into
-  $59 hides it behind a decimal point.
+  far the methods disagree, and what the current price is already assuming. **When DCF says \$42 and
+  comps say \$78, that disagreement is the most informative thing on the page** — averaging it into
+  \$59 hides it behind a decimal point.
 - **It does not invent a chart.** Every series comes from the model or the connector. If the data is
   not there, the chart does not exist.
 - **It does not pad to hit a page count.** A page mandate produces filler, and filler in a research

@@ -5,7 +5,7 @@ description: Audit a spreadsheet for formula accuracy, errors, and common mistak
 
 # Audit Spreadsheet
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Perimeter
 

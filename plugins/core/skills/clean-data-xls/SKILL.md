@@ -5,7 +5,7 @@ description: Clean up messy spreadsheet data — trim whitespace, fix inconsiste
 
 # Clean Data
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Perimeter
 

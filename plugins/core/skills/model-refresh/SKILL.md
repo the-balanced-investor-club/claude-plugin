@@ -1,12 +1,11 @@
 ---
-name: model-update
+name: model-refresh
 description: Update financial models with new data — quarterly earnings, management guidance, macro changes, or revised assumptions. Adjusts estimates, recalculates valuation, and flags material changes. Use after earnings, guidance updates, or when assumptions need refreshing. Triggers on "update model", "plug earnings", "refresh estimates", "update numbers for [company]", "new guidance", or "revise estimates".
 ---
 
 # Model Update
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -112,7 +111,7 @@ would change it.
 - Updated Excel model (if user provides the existing model)
 - Estimate change summary (markdown or Word)
 - Implied value range with its sensitivity, and the falsifier
-- Framing block and disclaimer, per `plugins/core/OUTPUT-BLOCK.md`
+- Framing block and disclaimer, per `../../OUTPUT-BLOCK.md`
 
 ## Important Notes
 

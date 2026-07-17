@@ -9,8 +9,7 @@ description: Build a discounted cash-flow model as a working Excel file — proj
 > `plugins/core/BRANDING.md`; the logo lockup is `plugins/core/assets/logo.png`. When the user
 > supplies their own template, the template wins.
 >
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -27,8 +26,8 @@ description: Build a discounted cash-flow model as a working Excel file — proj
 `get_balance_sheet` anyway**, because `get_valuation_inputs` returns *net* debt and the WACC needs
 *gross*. They are different numbers and one cannot be derived from the other.
 
-**The two tools also disagree.** For NVDA, `get_valuation_inputs` reported net debt of −$423M while
-the balance sheet implied −$3.14B, and the share counts differed by 1.2%. **Reconcile them, show both,
+**The two tools also disagree.** For NVDA, `get_valuation_inputs` reported net debt of −\$423M while
+the balance sheet implied −\$3.14B, and the share counts differed by 1.2%. **Reconcile them, show both,
 and say which you used.** Never average them.
 
 **If the connector is not available in this session: STOP.** Do not build a DCF from a price, a beta
@@ -172,7 +171,7 @@ performs by reading is a check that will be skipped the day it matters.
 - [ ] Sensitivity grid present, odd-dimensioned, and its **centre cell equals the model's output**
 - [ ] `validate_dcf.py` run, and it passed
 - [ ] The output is presented as a **range** with its drivers — never a fair value, never a target
-- [ ] Framing block and disclaimer, per `plugins/core/OUTPUT-BLOCK.md`
+- [ ] Framing block and disclaimer, per `../../OUTPUT-BLOCK.md`
 
 ## What this skill does NOT do
 
@@ -185,7 +184,7 @@ performs by reading is a check that will be skipped the day it matters.
 - **It does not average away a disagreement.** When trailing free cash flow is double the last full
   year — and for real companies it sometimes is — taking the mean produces a number describing no
   world that exists. Model both. Show both.
-- **It does not hide behind precision.** $84.19 is not more truthful than "somewhere in the low
+- **It does not hide behind precision.** \$84.19 is not more truthful than "somewhere in the low
   eighties". Decimals in a DCF are a costume.
 - **It does not work on ETFs or crypto.** Discounting the free cash flow of a coin is a category
   error.

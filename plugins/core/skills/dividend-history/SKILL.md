@@ -1,12 +1,11 @@
 ---
-name: dividends
+name: dividend-history
 description: Read a company's dividend history — ex-dividend dates, payment dates, and amount per share — and what it says about the payout over time. Computes yield from the price, because the dividend tool does not return it. Stocks and distributing ETFs only. Triggers on "dividends", "dividend history", "what does it pay", "dividend yield", "ex-dividend date", "did they raise the dividend", "income", "payout".
 ---
 
 # Dividends
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -59,7 +58,7 @@ first time both appear.
 
 The value is in the series. Lay it out and look for the shape:
 
-- **A raise.** KO went from $0.51 to $0.53 per quarter between December and March. That is a 3.9%
+- **A raise.** KO went from \$0.51 to \$0.53 per quarter between December and March. That is a 3.9%
   increase, and it is a decision the board made and announced — a fact, not an omen.
 - **A flat line.** Years of the same amount is a dividend being eroded by inflation in real terms,
   even though the nominal number never falls.

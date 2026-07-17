@@ -1,12 +1,11 @@
 ---
-name: unit-economics
+name: cohort-economics
 description: Analyze unit economics for PE targets — ARR cohorts, LTV/CAC, net retention, payback periods, revenue quality, and margin waterfall. Essential for software/SaaS, recurring revenue, and subscription businesses. Use when evaluating revenue quality, building a cohort analysis, or assessing customer economics. Triggers on "unit economics", "cohort analysis", "ARR analysis", "LTV CAC", "net retention", "revenue quality", or "customer economics".
 ---
 
 # Unit Economics Analysis
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -68,10 +67,10 @@ Build a cohort matrix showing:
 
 | Cohort | Year 0 | Year 1 | Year 2 | Year 3 | Year 4 |
 |--------|--------|--------|--------|--------|--------|
-| 2020 | $1.0M | $1.1M | $1.2M | $1.1M | |
-| 2021 | $1.5M | $1.7M | $1.8M | | |
-| 2022 | $2.0M | $2.3M | | | |
-| 2023 | $3.0M | | | | |
+| 2020 | \$1.0M | \$1.1M | \$1.2M | \$1.1M | |
+| 2021 | \$1.5M | \$1.7M | \$1.8M | | |
+| 2022 | \$2.0M | \$2.3M | | | |
+| 2023 | \$3.0M | | | | |
 
 Show both absolute $ and indexed (Year 0 = 100%) views.
 

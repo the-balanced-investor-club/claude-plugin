@@ -32,7 +32,7 @@ something breaks.
    `search_instruments` first, always.
 2. **Reconcile.** The two tools disagree — on NVDA, net debt came back as −$423M from one and −$3.14B
    from the other. **Show both, say which you used, and never average them.**
-3. **Build.** Invoke `dcf-model`, `3-statement-model` or `comps-analysis`. Blue for inputs, black for
+3. **Build.** Invoke `dcf-model`, `three-statement-model` or `comps-analysis`. Blue for inputs, black for
    formulas, green for cross-sheet links. **No typed numbers in calculation cells.**
 4. **Audit.** Invoke `audit-xls`. If the balance sheet does not balance, **that is the only finding
    until it does.**
@@ -60,7 +60,7 @@ something breaks.
 
 ## Skills this agent uses
 
-`dcf-model` · `3-statement-model` · `comps-analysis` · `audit-xls` · `xlsx-author`
+`dcf-model` · `three-statement-model` · `comps-analysis` · `audit-xls` · `xlsx-author`
 
 ## What this agent does NOT do
 

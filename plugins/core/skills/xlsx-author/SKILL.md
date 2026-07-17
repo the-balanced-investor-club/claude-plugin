@@ -5,7 +5,7 @@ description: Produce a .xlsx file on disk — a workbook the user can open, poke
 
 # xlsx-author
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Perimeter
 

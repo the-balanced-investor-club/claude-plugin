@@ -5,8 +5,7 @@ description: Read the US macro backdrop — rates, jobs, growth, energy, metals 
 
 # Macro Read
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 

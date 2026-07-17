@@ -5,8 +5,7 @@ description: Map and filter the coverage universe — list every company in a se
 
 # Screener
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -72,7 +71,7 @@ and the typical company in it is having a different experience.
 
 `list_securities_by` takes `field` (`sector` | `industry`) and `value`. Set `sort: "market_cap"` to
 get the size column and order — that is how you build a peer set for a comps analysis, and it is how
-you show the user that "Semiconductors" spans a $5.1T company and a sub-billion one in the same list.
+you show the user that "Semiconductors" spans a \$5.1T company and a sub-billion one in the same list.
 
 Report the **total count**, not just the rows you show. "70 companies in Semiconductors, here are the
 six largest" is honest. Showing six and saying nothing about the other sixty-four is not.

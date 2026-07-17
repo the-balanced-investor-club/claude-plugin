@@ -5,8 +5,7 @@ description: Read who owns a company and what they have been doing — insider t
 
 # Ownership Context
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -44,10 +43,10 @@ Read the **price** column and the **share counts**, not the Buy/Sell label.
 A real pull for KO, all on **the same day**:
 
 ```
-2026-06-09  MANN, JENNIFER K  EVP  Buy   55.15K  @ $61.34   ← well below market
-2026-06-09  MANN, JENNIFER K  EVP  Sell  55.15K  @ $80.75   ← at market. Same count. Same day.
-2026-06-09  MANN, JENNIFER K  EVP  Buy   18.83K  @ $50.44
-2026-06-09  MANN, JENNIFER K  EVP  Sell  18.83K  @ $80.75   ← same again
+2026-06-09  MANN, JENNIFER K  EVP  Buy   55.15K  @ \$61.34   ← well below market
+2026-06-09  MANN, JENNIFER K  EVP  Sell  55.15K  @ \$80.75   ← at market. Same count. Same day.
+2026-06-09  MANN, JENNIFER K  EVP  Buy   18.83K  @ \$50.44
+2026-06-09  MANN, JENNIFER K  EVP  Sell  18.83K  @ \$80.75   ← same again
 ```
 
 That is **not** an executive buying stock. It is an **option exercise and immediate sale**: buy at
@@ -97,8 +96,8 @@ information. It is rare. **When you find one, say it is rare, and still do not c
 insiders are wrong about their own companies with great regularity, and the research on whether their
 buying predicts anything is a good deal weaker than the folklore.
 
-Size it: is this large against the person's own holding? Against the company's market cap? A $2m
-purchase in a $360bn company is a rounding error, however confident it looks.
+Size it: is this large against the person's own holding? Against the company's market cap? A \$2m
+purchase in a \$360bn company is a rounding error, however confident it looks.
 
 ---
 

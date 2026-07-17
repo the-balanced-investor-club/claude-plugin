@@ -5,8 +5,7 @@ description: Manage your Stock Trackers at The Balanced Investor Club — create
 
 # Stock Tracker
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 

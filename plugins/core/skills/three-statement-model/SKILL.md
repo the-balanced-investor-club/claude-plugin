@@ -1,5 +1,5 @@
 ---
-name: 3-statement-model
+name: three-statement-model
 description: Complete, populate and fill out 3-statement financial model templates (Income Statement, Balance Sheet, Cash Flow Statement) . Use when asked to fill out model templates, complete existing model frameworks, populate financial models with data, complete a partially filled IS/BS/CF framework, or link integrated financial statements within an existing template structure. Triggers include requests to fill in, complete, or populate a 3-statement model template
 ---
 
@@ -7,7 +7,7 @@ description: Complete, populate and fill out 3-statement financial model templat
 
 # 3-Statement Financial Model Template Completion
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source and perimeter
 
@@ -25,13 +25,13 @@ Complete and populate integrated financial model templates with proper linkages 
 ## ⚠️ CRITICAL PRINCIPLES — Read Before Populating Any Template
 
 **Environment — Office JS vs Python:**
-- **If running inside Excel (Office Add-in / Office JS):** Use Office JS directly. Write formulas via `range.formulas = [["=D14*(1+Assumptions!$B$5)"]]` — never `range.values` for derived cells. No separate recalc; Excel computes natively. Use `context.workbook.worksheets.getItem(...)` to navigate tabs.
+- **If running inside Excel (Office Add-in / Office JS):** Use Office JS directly. Write formulas via `range.formulas = [["=D14*(1+Assumptions!$B\$5)"]]` — never `range.values` for derived cells. No separate recalc; Excel computes natively. Use `context.workbook.worksheets.getItem(...)` to navigate tabs.
 - **Office JS merged cell pitfall:** Do NOT call `.merge()` then set `.values` on the merged range — throws `InvalidArgument` because the range still reports its pre-merge dimensions. Instead write value to top-left cell alone, then merge + format the full range: `ws.getRange("A1").values = [["INCOME STATEMENT"]]; const h = ws.getRange("A1:G1"); h.merge(); h.format.fill.color = "#28333C";`
 - All principles below apply identically in either environment.
 
 **Formulas over hardcodes (non-negotiable):**
 - Every projection cell, roll-forward, linkage, and subtotal MUST be an Excel formula — never a pre-computed value
-- When using Python/openpyxl: write formula strings (`ws["D15"] = "=D14*(1+Assumptions!$B$5)"`), NOT computed results (`ws["D15"] = 12500`)
+- When using Python/openpyxl: write formula strings (`ws["D15"] = "=D14*(1+Assumptions!$B\$5)"`), NOT computed results (`ws["D15"] = 12500`)
 - The ONLY cells that should contain hardcoded numbers are: (1) historical actuals, (2) assumption drivers in the Assumptions tab
 - If you find yourself computing a value in Python and writing the result to a cell — STOP. Write the formula instead.
 - Why: the model must flex when scenarios toggle or assumptions change. Hardcodes break every downstream integrity check silently.

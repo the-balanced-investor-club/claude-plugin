@@ -1,12 +1,11 @@
 ---
-name: morning-note
+name: morning-note-draft
 description: Draft concise morning notes summarizing overnight developments, what to watch, and key events for the stocks the user follows. Designed for a 7am reading format, tight and factual. Triggers on "morning note", "morning briefing", "what happened overnight", "morning call prep", or "daily note".
 ---
 
 # Morning Note
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 

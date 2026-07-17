@@ -1,12 +1,11 @@
 ---
-name: competitive-analysis
+name: competitive-landscape
 description: Framework for building competitive landscape decks — market positioning, competitor deep-dives, comparative analysis, strategic synthesis. Use when the user asks for a competitive landscape, competitor analysis, peer comparison, market positioning assessment, strategic review, or investment memo deck. Also triggers on "who are the competitors to X", "benchmark X against peers", "build a market map", or any request to systematically evaluate competitive dynamics across an industry.
 ---
 
 # Competitive Landscape Mapping
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -88,7 +87,7 @@ When the user specifies something, that's a requirement, not a suggestion:
 
 - **Slide titles are insights, not labels.** "Scale leaders pulling away from niche players" — not "Competitive Analysis."
 - **Signposts are quantified.** "Margin below 40%" — not "margins decline."
-- **Ratings show the actual.** "●●● $160B" — not just "●●●."
+- **Ratings show the actual.** "●●● \$160B" — not just "●●●."
 - **Charts are real chart objects** — not text tables dressed up to look like charts.
 
 **Typography** — set explicitly, don't rely on defaults:
@@ -145,7 +144,7 @@ Industry not listed — pick the metrics investors and operators benchmark on.
 
 Size, growth, drivers, headwinds. With sources.
 
-Correct: "Embedded payments is $80-100B in 2024, growing 20-25% CAGR (named industry report, 2024)"
+Correct: "Embedded payments is \$80-100B in 2024, growing 20-25% CAGR (named industry report, 2024)"
 Wrong: "The market is large and growing rapidly"
 
 ### Step 2 — Industry economics
@@ -160,10 +159,10 @@ Map how value flows. Approach depends on industry structure:
 ```
 | Metric | Value |
 |---|---|
-| Revenue | $4.96B |
+| Revenue | \$4.96B |
 | Growth | +26% YoY |
 | Gross Margin | 45% |
-| Profitability | $373M Adj. EBITDA |
+| Profitability | \$373M Adj. EBITDA |
 | Customers | 134K |
 | Retention | 92% |
 | Market Share | ~15% |
@@ -174,10 +173,10 @@ Multi-segment companies add a breakdown:
 ```
 | Segment | Revenue | Rev YoY | Rev % | EBITDA | EBITDA YoY | Margin |
 |---|---|---|---|---|---|---|
-| Seg A | $25.1B | +26% | 57% | $6.5B | +31% | 26% |
-| Seg B | $13.8B | +31% | 31% | $2.5B | +64% | 18% |
-| Seg C | $5.1B | -2% | 12% | -$74M | -16% | -1% |
-| Total | $44.0B | +18% | 100% | $6.5B* | - | 15% |
+| Seg A | \$25.1B | +26% | 57% | \$6.5B | +31% | 26% |
+| Seg B | \$13.8B | +31% | 31% | \$2.5B | +64% | 18% |
+| Seg C | \$5.1B | -2% | 12% | -\$74M | -16% | -1% |
+| Total | \$44.0B | +18% | 100% | \$6.5B* | - | 15% |
 ```
 *Note corporate costs if applicable
 
@@ -234,7 +233,7 @@ Two tables per competitor.
 ```
 | Dimension | Company A | Company B | Company C |
 |---|---|---|---|
-| Scale | ●●● $160B | ●●○ $45B | ●○○ $8B |
+| Scale | ●●● \$160B | ●●○ \$45B | ●○○ \$8B |
 | Growth | ●●○ +26% | ●●● +35% | ●●○ +22% |
 | Margins | ●●○ 7.5% | ●○○ 3.2% | ●●● 15% |
 ```

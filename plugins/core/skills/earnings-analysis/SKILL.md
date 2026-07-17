@@ -5,8 +5,7 @@ description: Create professional equity research earnings update reports (8-12 p
 
 # Earnings Update
 
-> **Output:** deliverables carry the blocks defined in `plugins/core/OUTPUT-BLOCK.md`. The connector
-> already appends the disclaimer to every response — do not add a second one.
+> **Output:** deliverables carry the blocks defined in `../../OUTPUT-BLOCK.md`.
 
 ## Data source
 
@@ -44,7 +43,7 @@ an escape hatch either — a relabelled recommendation is still a recommendation
 2. **The sensitivity** — what moves that range, and by how much.
 3. **The falsifier** — what would prove this read wrong.
 
-The framing block and the disclaimer are defined once in `plugins/core/OUTPUT-BLOCK.md`. Reproduce
+The framing block and the disclaimer are defined once in `../../OUTPUT-BLOCK.md`. Reproduce
 them in the document; do not restate them here.
 
 **Key Characteristics:**
@@ -79,7 +78,7 @@ Use when the user requests:
 
 ### 2. Beat/Miss Analysis
 - Lead with whether company beat or missed estimates
-- Quantify variances (e.g., "Revenue beat by $120M or 3%")
+- Quantify variances (e.g., "Revenue beat by \$120M or 3%")
 - Explain WHY results differed from expectations
 
 ### 3. Summary Format

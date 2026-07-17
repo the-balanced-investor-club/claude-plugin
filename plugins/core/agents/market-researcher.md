@@ -27,7 +27,7 @@ Given a sector or theme and a one-line angle, you deliver:
 
 1. **Scope the ask.** Confirm sector or theme, angle, and the universe boundary. Identify the 8-15 names that define the space with `list_securities_by` (sector or industry) and `search_instruments`.
 2. **Write the overview.** Invoke `sector-overview` to draft size, growth, structure, drivers, and the why-now narrative; ground it in `get_sector_returns` and `get_industry_returns`.
-3. **Map the landscape.** Invoke `competitive-analysis` to lay out players, positioning, and recent moves (`get_news` per name).
+3. **Map the landscape.** Invoke `competitive-landscape` to lay out players, positioning, and recent moves (`get_news` per name).
 4. **Spread the peers.** Pull multiples via The Balanced Investor Club connector (`get_fundamentals`, statements tools, `compare_tickers`) and invoke `comps-analysis` to spread the peer set with consistent definitions.
 5. **Map the universe.** Invoke `screener` against the sector to lay out every company in it, the weighted-vs-simple return gap, and what the screen cannot see. **Never rank the names, and never shortlist them.**
 6. **Assemble the note.** Format the research note as markdown. This agent does not produce slides.
@@ -67,7 +67,7 @@ they look at, and will conclude things are working when they are not.
 
 ## Skills this agent uses
 
-`sector-overview` · `competitive-analysis` · `comps-analysis` · `screener`
+`sector-overview` · `competitive-landscape` · `comps-analysis` · `screener`
 
 ## What this agent does NOT do
 
