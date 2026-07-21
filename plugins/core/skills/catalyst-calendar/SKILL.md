@@ -26,18 +26,17 @@ and ask again." A restart is often required right after installing.
 
 ## Workflow
 
-### Step 1: Define Coverage Universe
+### Step 1: Define the coverage universe
 
-- List of companies to track (tickers or names)
-- Sector / industry focus
-- Include macro events? (Fed meetings, economic data, regulatory deadlines)
-- Time horizon (next 2 weeks, month, quarter)
+- Get the names to track: `get_my_watchlists` for what the user already follows, or take the tickers / sector they name.
+- Set a time horizon (next 2 weeks, month, quarter) — this becomes the `from` / `to` window.
+- Decide whether to include macro events (Fed meetings, economic data, regulatory deadlines).
 
-### Step 2: Gather Catalysts
+### Step 2: Pull the calendar, scoped to the coverage
 
-For each company, identify upcoming events:
+Call `get_market_calendar` with `tickers` set to the coverage list and `from` / `to` set to the horizon. The tool filters server-side, so you get only the events that matter — not the whole market. **Passing no `tickers` returns the entire market, so always scope it to the coverage.** For event types the calendar does not carry, layer in the ones below where you already know them — never invent a date; if it is not served and you do not know it, say so:
 
-**Earnings & Financial Events**
+**Earnings & Financial Events (from `get_market_calendar`)**
 - Quarterly earnings date and time (pre/post market)
 - Annual shareholder meeting
 - Investor day / analyst day

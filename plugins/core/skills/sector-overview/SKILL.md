@@ -13,7 +13,7 @@ description: Create comprehensive industry and sector landscape reports covering
 |------|------|
 | Every company in the sector or industry | `list_securities_by` |
 | The sector's return — **weighted and simple** | `get_sector_returns`, `get_industry_returns` |
-| The behavioural distribution across the same set | `list_market_moods` |
+| The behavioural distribution across the names we track | `list_market_moods` |
 | Size, multiples, margins per company | `get_fundamentals` |
 | What is happening, with sentiment | `get_news` |
 

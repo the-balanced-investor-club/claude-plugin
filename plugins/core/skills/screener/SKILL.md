@@ -16,7 +16,7 @@ description: Map and filter the coverage universe — list every company in a se
 | The sector's average return — **weighted and simple** | `get_sector_returns` |
 | The same, for one industry | `get_industry_returns` |
 | Valuation and size metrics per company | `get_fundamentals` |
-| The behavioural distribution across the same set | `list_market_moods` |
+| The behavioural distribution across the names we track | `list_market_moods` |
 | Resolve a company name to a symbol | `search_instruments` |
 
 **If the connector is not available in this session: STOP.** Do not screen from memory, and do not
@@ -107,7 +107,7 @@ Two things to say every time:
   1, or it will read as though those five were the universe.
 
 Pair it with `list_market_moods` on the same sector for the behavioural distribution — the same
-universe, seen through a second lens.
+sector, read on the names we track: a second lens.
 
 ---
 
