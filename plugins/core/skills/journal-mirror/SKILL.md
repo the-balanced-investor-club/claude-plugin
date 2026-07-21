@@ -1,6 +1,7 @@
 ---
 name: journal-mirror
-description: Read your own Trading Journal back to you — win rate by emotional state, Trust Score and what built it, and the patterns in how you actually behave when money is on the line. It answers "do I believe my own numbers?" using the one dataset nobody else has: your decisions, joined to your feelings, joined to your P&L. Triggers on "how am I doing", "my trading stats", "my journal", "my patterns", "my trust score", "what am I doing wrong", "review my trades", "am I improving".
+description: >-
+  Read your own Trading Journal back to you — win rate by emotional state, Trust Score and what built it, and the patterns in how you actually behave when money is on the line. It answers "do I believe my own numbers?" using the one dataset nobody else has: your decisions, joined to your feelings, joined to your P&L. Triggers on "how am I doing", "my trading stats", "my journal", "my patterns", "my trust score", "what am I doing wrong", "review my trades", "am I improving".
 ---
 
 # Journal Mirror

@@ -1,6 +1,7 @@
 ---
 name: macro-read
-description: Read the US macro backdrop — rates, jobs, growth, energy, metals and commodities — as context behind the market, never as a signal about any one company. Handles the traps: indicators arrive on different dates, and some are levels or index points rather than rates. Triggers on "macro", "the economy", "interest rates", "inflation", "unemployment", "what's the backdrop", "oil price", "gold price", "commodities", "what's happening in the economy".
+description: >-
+  Read the US macro backdrop — rates, jobs, growth, energy, metals and commodities — as context behind the market, never as a signal about any one company. Handles the traps: indicators arrive on different dates, and some are levels or index points rather than rates. Triggers on "macro", "the economy", "interest rates", "inflation", "unemployment", "what's the backdrop", "oil price", "gold price", "commodities", "what's happening in the economy".
 ---
 
 # Macro Read

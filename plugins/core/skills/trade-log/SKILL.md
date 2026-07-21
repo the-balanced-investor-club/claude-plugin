@@ -1,6 +1,7 @@
 ---
 name: trade-log
-description: Record a trade you have already made into your Trading Journal at The Balanced Investor Club — the ticker, the entry, the thesis you acted on, and how you felt when you pulled the trigger. Then close it later with an exit reflection and the lesson learned. This is the journal, not a broker: it records decisions, it never places them. Triggers on "log a trade", "journal this trade", "I bought", "I sold", "record my entry", "add to my journal", "close my trade", "I exited", "what did I learn".
+description: >-
+  Record a trade you have already made into your Trading Journal at The Balanced Investor Club — the ticker, the entry, the thesis you acted on, and how you felt when you pulled the trigger. Then close it later with an exit reflection and the lesson learned. This is the journal, not a broker: it records decisions, it never places them. Triggers on "log a trade", "journal this trade", "I bought", "I sold", "record my entry", "add to my journal", "close my trade", "I exited", "what did I learn".
 ---
 
 # Trade Log
