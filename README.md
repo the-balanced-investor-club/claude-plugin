@@ -145,17 +145,6 @@ The verifier reads the **whole** skill directory — `SKILL.md` *and* `reference
 hard way: when three oversized skills were split into `references/`, six price targets went with them
 — straight out of a file the verifier was watching, and into one it wasn't.
 
-## How this relates to Claude for Financial Services
-
-The starting point was
-[anthropics/financial-services](https://github.com/anthropics/financial-services) (Apache 2.0), a
-catalogue built for bankers, analysts and fund administrators. That's not who this is for.
-
-So the catalogue was **re-scoped, not just re-badged**: the workflows that presuppose a client book, a
-data room or an investment committee were removed, the sell-side rating apparatus was taken out
-entirely, and the skills that make this product what it is — the journal, the reverse DCF, the call
-reader — were written from scratch.
-
 Attribution and licence terms are in [NOTICE](NOTICE) and [LICENSE](LICENSE).
 
 ## Questions
